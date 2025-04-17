@@ -1,0 +1,29 @@
+
+
+@font-face {
+    font-family: 'Halenoir';
+    src: url('Halenoir/HalenoirExpanded-DemiBold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Halenoir-ExtraBold';
+    src: url('Halenoir/HalenoirExpanded-ExtraBold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Aplicar la fuente a todo el sitio */
+
+h1 {
+    font-family: 'Halenoir', sans-serif;
+    font-weight: bolder;
+}
+
+.vega-artistas-h1 {
+    font-size: 50px;
+    font-family: 'Halenoir-ExtraBold', sans-serif;
+    font-weight: bolder;
+}
