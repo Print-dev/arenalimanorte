@@ -1,5 +1,3 @@
-
-
 /* @font-face {
     font-family: 'Halenoir';
     src: url('Halenoir/HalenoirExpanded-DemiBold.otf') format('opentype');
@@ -31,71 +29,155 @@
 
  */
 
- li, h1, h2 {
+li,
+h1,
+h2 {
   font-family: "Righteous", sans-serif;
   font-weight: 200;
   font-style: normal;
 }
 
+body,
+section {
+  margin: 0;
+  padding: 0;
+}
+
+
 .carousel-container {
-    width: 100vw;
-    /* 100% del ancho de la pantalla */
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
+  width: 100vw;
+  /* 100% del ancho de la pantalla */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
 }
 
 /* Carrusel con imágenes en fila */
 .carousel {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  -webkit-box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.75);
 }
 
 /* Imágenes en formato vertical */
 .carousel img {
-    width: 300px;
-    /* Ancho fijo */
-    height: 460px;
-    /* Alto fijo */
-    object-fit: cover;
-    border-radius: 10px;
+  width: 300px;
+  /* Ancho fijo */
+  height: 460px;
+  /* Alto fijo */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-item img {
+  object-fit: cover;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.4);
+  /* opcional: fondo semitransparente */
 }
 
 nav.navbar {
-    position: fixed !important;
-    top: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    /* fondo oscuro, semitransparente */
-    z-index: 1050;
-    /* aseguramos que esté por encima de todo */
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  /* fondo oscuro, semitransparente */
+  z-index: 1050;
+  /* aseguramos que esté por encima de todo */
 }
 
 body {
-    padding-top: 100px;
-    /* para que el contenido no quede tapado por el navbar */
+  padding-top: 100px;
+  background: transparent;
+
+  /* para que el contenido no quede tapado por el navbar */
 }
 
 .main-navbar {
-    background-color: rgba(0, 0, 0, 0.4); /* fondo oscuro transparente */
-    backdrop-filter: blur(5px); /* efecto difuminado de fondo */
-    transition: background-color 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* fondo oscuro transparente */
+  backdrop-filter: blur(5px);
+  /* efecto difuminado de fondo */
+  transition: background-color 0.3s ease;
+}
+
+.navbar .nav-link,
+.navbar .btn {
+  color: white;
+}
+
+#mainNavbar {
+  background: rgba(0, 0, 0, 0.3);
+  /* semitransparente */
+  backdrop-filter: blur(10px);
+  /* difuminado como glassmorphism */
+  transition: background 0.3s ease-in-out;
+}
+
+#mainNavbar.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  /* se oscurece al hacer scroll */
+}
+
+.bottom-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  /* atrás de todo */
+  background-image: url('./images/fondo.jpeg');
+  /* pon la imagen que quieras */
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px);
+  /* borrosidad */
+  opacity: 0.5;
+  /* un poco transparente */
+}
+
+/* Por defecto, tu margen de 60px */
+/* Por defecto: SIN margen, ocupa todo el ancho */
+#carouselExampleFade {
+  margin: 0;
+  transition: margin 0.3s ease;
+  width: 100%;
+}
+
+#drag-scroll {
+  cursor: grab;
+}
+
+#drag-scroll.cursor-grabbing {
+  cursor: grabbing;
+}
+/* Si el usuario tiene zoom muy bajo (viewport más chico), le damos margen */
+@media (min-width: 2000px) {
+  #carouselExampleFade {
+    margin: 60px;
+    margin-bottom: 120px;
+
   }
-  
-  .navbar .nav-link,
-  .navbar .btn {
-    color: white;
-  }
-  
-  .bottom-fade {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-    pointer-events: none;
-    z-index: 2;
-  }
+}
