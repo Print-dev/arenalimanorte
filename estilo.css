@@ -1,169 +1,327 @@
-/* @font-face {
-    font-family: 'Halenoir';
-    src: url('Halenoir/HalenoirExpanded-DemiBold.otf') format('opentype');
-    font-weight: bold;
-    font-style: normal;
-}
+/* CSS Code */
+/* .swiper-wrapper {
+  width: 10%;
+  height: max-content !important;
+  padding-bottom: 64px !important;
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+  position: relative;
+  }
+  .swiper-pagination-bullet {
+  background: #4F46E5;
+  }
+  .swiper-pagination-bullet-active {
+  background: #4F46E5 !important;
+  } */
 
-@font-face {
-    font-family: 'Halenoir-ExtraBold';
-    src: url('Halenoir/HalenoirExpanded-ExtraBold.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
- */
-/* Aplicar la fuente a todo el sitio */
-
-/* h1 {
-  font-family: "Righteous", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.vega-artistas-h1 {
-  font-family: "Righteous", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
- */
-
-li,
-h1,
-h2 {
-  font-family: "Righteous", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-body,
-section {
+  *{
   margin: 0;
   padding: 0;
+  
+  }
+li {
+  font-family: "Righteous", sans-serif;
+  font-size: 14px;
+  padding-inline: 10px;
+  font-weight: 100;
+  font-style: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
+h2,
+h1 {
+  font-family: "Righteous", sans-serif;
+  font-style: normal;
+  letter-spacing: 2px;
 
-.carousel-container {
-  width: 100vw;
-  /* 100% del ancho de la pantalla */
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  padding: 20px 0;
 }
 
-/* Carrusel con imágenes en fila */
-.carousel {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  -webkit-box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.75);
-}
-
-/* Imágenes en formato vertical */
-.carousel img {
-  width: 300px;
-  /* Ancho fijo */
-  height: 460px;
-  /* Alto fijo */
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.carousel-item img {
-  object-fit: cover;
-}
-
-.navbar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.4);
-  /* opcional: fondo semitransparente */
-}
-
-nav.navbar {
-  position: fixed !important;
-  top: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  /* fondo oscuro, semitransparente */
-  z-index: 1050;
-  /* aseguramos que esté por encima de todo */
-}
-
-body {
-  padding-top: 100px;
-  background: transparent;
-
-  /* para que el contenido no quede tapado por el navbar */
-}
-
-.main-navbar {
-  background-color: rgba(0, 0, 0, 0.4);
-  /* fondo oscuro transparente */
-  backdrop-filter: blur(5px);
-  /* efecto difuminado de fondo */
-  transition: background-color 0.3s ease;
-}
-
-.navbar .nav-link,
-.navbar .btn {
-  color: white;
-}
-
-#mainNavbar {
-  background: rgba(0, 0, 0, 0.3);
-  /* semitransparente */
-  backdrop-filter: blur(10px);
-  /* difuminado como glassmorphism */
-  transition: background 0.3s ease-in-out;
-}
-
-#mainNavbar.scrolled {
-  background: rgba(0, 0, 0, 0.9);
-  /* se oscurece al hacer scroll */
-}
-
-.bottom-fade {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-  pointer-events: none;
-  z-index: 2;
+.navbar-brand img {
+  max-width: 100%;
+  height: auto;
 }
 
 .background-blur {
   position: fixed;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100vh + 20px);
+  z-index: -1;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.556), rgba(0, 0, 0, 0.613)),
+    /* Color overlay */
+    url('./images/fondo.jpeg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  opacity: 0.8;
+}
+
+
+#mainNavbar {
+  background-color: rgba(0, 0, 0, 0.541);
+  /* fondo semitransparente */
+  backdrop-filter: blur(10px);
+  /* efecto blur */
+  -webkit-backdrop-filter: blur(10px);
+  /* soporte para Safari */
+  border: none;
+}
+
+
+.card.card-background {
+  position: relative;
+  height: 250px;
+  /* le damos un alto fijo o controlable */
+  overflow: hidden;
+  border: none;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 27px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 27px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 27px 5px rgba(0, 0, 0, 0.75);
+}
+
+.full-background.bg-cover {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  z-index: -1;
-  /* atrás de todo */
-  background-image: url('./images/fondo.jpeg');
-  /* pon la imagen que quieras */
+  height: 100%;
+  /* clave */
   background-size: cover;
   background-position: center;
-  filter: blur(20px);
-  /* borrosidad */
-  opacity: 0.5;
-  /* un poco transparente */
+  z-index: 1;
+  -webkit-box-shadow: 0px 0px 27px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 27px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 27px 5px rgba(0, 0, 0, 0.75);
+
 }
 
-/* Por defecto, tu margen de 60px */
-/* Por defecto: SIN margen, ocupa todo el ancho */
-#carouselExampleFade {
-  margin: 0;
-  transition: margin 0.3s ease;
+.card {
+  height: 100%;
   width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  position: relative;
+  z-index: 2;
+  /* para que el texto esté encima del fondo */
+  color: white;
+  -webkit-box-shadow: 0px 0px 27px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 27px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 27px 5px rgba(0, 0, 0, 0.75);
+}
+
+
+.swiper-coverflow {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide-coverflow {
+  width: 100%;
+  max-width: 450px;
+  height: 520px;
+
+  /* <-- Aumenta este valor para PC */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.swiper-img-coverflow {
+  background-color: black;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 768px) {
+  .swiper-slide-coverflow {
+    max-width: 100%;
+    height: 580px;
+
+    /* Que ocupe más espacio en pantallas pequeñas */
+  }
+}
+
+.swiper-card-container {
+  width: 200px;
+  height: 320px;
+}
+
+.swiper-card-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.75);
+}
+
+.contenedor-texto-ticketera {
+  padding-block: 12px;
+}
+
+.contenedor-ticktera {
+  -webkit-box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.75);
+}
+
+.btn-card {
+
+  background-color: #ffffff00;
+  color: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  border: 2px solid rgb(255, 255, 255);
+  z-index: 1;
+}
+
+.btn-card:hover {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.ticketera-section .card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* .img-ticketera {
+  background: #000000;
+  background: linear-gradient(265deg, rgba(0, 0, 0, 1) 0%, rgba(58, 181, 109, 0) 50%);
+}
+ */
+.contenedor-body-ticketera {
+  background-color: rgba(0, 0, 0, 0.315);
+  /* fondo negro semitransparente */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: none;
+  /* opcional, por estilo */
+}
+
+/* CARTAAAAA */
+
+.festival-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.festival-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.festival-card .card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.2) 40%, transparent 70%);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card-text-content {
+  color: white;
+  padding: 10px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  margin: 5px 0 10px;
+  font-size: 0.95rem;
+}
+
+.card-icon-text {
+  display: flex;
+  align-items: center;
+  /* Alinea verticalmente */
+  gap: 8px;
+  /* Espacio entre ícono y texto */
+  color: #fff;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.carousel-container {
+  position: relative;
+}
+
+.carousel-text-overlay {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.carousel-text-overlay h1,
+.carousel-text-overlay p {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+#carouselExampleFade {
+  border-radius: 20px;
+  margin: 0px;
+  margin-top: 0px;
+  /* o lo que mida tu navbar (aprox 80-100px si tiene padding) */
+  margin-bottom: 0px;
+  transition: margin 0.3s ease;
+  -webkit-box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 50px 15px rgba(0, 0, 0, 0.75);
 }
 
 #drag-scroll {
@@ -173,11 +331,71 @@ body {
 #drag-scroll.cursor-grabbing {
   cursor: grabbing;
 }
-/* Si el usuario tiene zoom muy bajo (viewport más chico), le damos margen */
-@media (min-width: 2000px) {
-  #carouselExampleFade {
-    margin: 60px;
-    margin-bottom: 120px;
 
+/* Si el usuario tiene zoom muy bajo (viewport más chico), le damos margen */
+@media (min-width: 2500px) {
+  #carouselExampleFade {
+    overflow: hidden;
+    margin: 250px;
+    margin-top: 150px;
+    /* o lo que mida tu navbar (aprox 80-100px si tiene padding) */
+    margin-bottom: 120px;
   }
+}
+
+@media (max-width: 900px) {
+  .carousel-container {
+    margin-top: 115px;
+    /* Baja un poco más si querés */
+  }
+}
+
+/* ************************************** CARD *********************************************** */
+
+
+/*  ********************************** EXPERIENCES ********************************************* */
+.swiper-container-experiences {
+  width: 100%;
+  height: 100%;
+
+}
+
+.swiper-slide-experiencias {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.swiper-slide-experiencias img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ********************************** FOOTER ************************************************** */
+
+.footer-blur {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.footer-blur::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.161);
+  /* Fondo oscuro */
+  backdrop-filter: blur(10px);
+  /* Efecto blur */
+  z-index: -1;
 }

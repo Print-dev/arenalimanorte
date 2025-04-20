@@ -5,8 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Arena Lima Norte</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="https://res.cloudinary.com/dynpy0r4v/image/upload/v1744848217/arenalimanorte/z1yjapubxokft2dmvodw.png" type="image/x-png">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../assets/css/corporate-ui-dashboard.css" rel="stylesheet" />
+
+    <!-- Core -->
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+
+    <!-- Theme JS -->
+    <script src="../assets/js/corporate-ui-dashboard.min.js"></script>
+    <script src="../../assets/js/plugins/swiper-bundle.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
@@ -14,235 +36,145 @@
 
 </head>
 
-<body class="bg-black text-white">
-    <div class="background-blur"></div>
+<body class="bg-black text-white font-righteous">
+    <!-- Navbar fijo con fondo blur -->
 
-    <section>
-        <nav class="navbar navbar-expand-lg navbar-dark w-100 z-3 fixed-top py-3" id="mainNavbar">
-            <div class="container-fluid d-flex justify-content-between align-items-center px-4">
-                <!-- Izquierda: Logo + Enlaces -->
-                <div class="d-flex align-items-center">
-                    <a class="navbar-brand me-3" href="#">
-                        <img src="https://res.cloudinary.com/dynpy0r4v/image/upload/v1744859794/arenalimanorte/oincvsofctmbhuoqnhlc.png" width="200" alt="Logo">
-                    </a>
-                    <button class="navbar-toggler border-white me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav gap-3">
-                            <li class="nav-item"><a class="nav-link text-white" href="">Quienes somos</a></li>
-                            <li class="nav-item"><a class="nav-link text-white" href="#">Eventos próximos</a></li>
-                            <li class="nav-item"><a class="nav-link text-white" href="#">Vive la experiencia</a></li>
-                            <li class="nav-item"><a class="nav-link text-white" href="#">Contáctanos</a></li>
-                        </ul>
+
+    <nav class="bg-dark dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="https://res.cloudinary.com/dynpy0r4v/image/upload/v1744859794/arenalimanorte/oincvsofctmbhuoqnhlc.png" alt="Logo" class="w-48">
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
+                <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-dark md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-dark dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Quienes somos</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Eventos próximos</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Vive la experiencia</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contáctanos</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <body class="g-sidenav-show bg-gray-100">
+
+        <h1>Hello, world!</h1>
+
+        <!--   Core JS Files   -->
+        <script src="../assets/js/core/popper.min.js"></script>
+        <script src="../assets/js/core/bootstrap.min.js"></script>
+
+        <!-- Plugin for the charts, full documentation here: https://www.chartjs.org/ -->
+        <script src="../assets/js/plugins/chartjs.min.js"></script>
+        <script src="../assets/js/plugins/Chart.extension.js"></script>
+
+        <!-- Control Center for Corporate UI Dashboard: parallax effects, scripts for the example pages etc -->
+        <script src="../assets/js/corporate-ui-dashboard.min.js"></script>
+    </body>
+
+    <!-- Imagen principal debajo del navbar -->
+    <section class="w-full flex justify-center relative">
+        <img src="./images/r1.jpeg" alt="Imagen Principal"
+            class="max-w-6xl w-full h-auto object-contain px-4">
+    </section>
+
+    <section class="w-full px-4 py-8">
+        <div class="swiper multiple-slide-carousel swiper-container relative">
+            <div class="swiper-wrapper">
+                <!-- Slide -->
+                <div class="swiper-slide w-auto">
+                    <div class="bg-indigo-50 rounded-2xl flex justify-center items-center">
+                        <div class="relative w-80 border border-gray-200 rounded-2xl overflow-hidden shadow transition-all duration-500">
+                            <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Card image" class="w-full h-48 object-cover" />
+                            <div class="p-4">
+                                <h4 class="text-base font-semibold text-gray-900 mb-2 capitalize">Fast Transaction</h4>
+                                <p class="text-sm text-gray-500 leading-5 mb-4">Provides faster transaction, so money arrives in realtime</p>
+                                <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold py-2 px-5 rounded-full">Read More</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Derecha: Botones -->
-                <div class="d-flex gap-3">
-                    <button class="btn text-white p-3 rounded-5">Iniciar sesión</button>
-                    <button class="btn btn-light text-black p-3 rounded-5">Registrarse</button>
+                <!-- Slide -->
+                <div class="swiper-slide w-auto">
+                    <div class="bg-indigo-50 rounded-2xl flex justify-center items-center">
+                        <div class="relative w-80 border border-gray-200 rounded-2xl overflow-hidden shadow transition-all duration-500">
+                            <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Card image" class="w-full h-48 object-cover" />
+                            <div class="p-4">
+                                <h4 class="text-base font-semibold text-gray-900 mb-2 capitalize">Fast Transaction</h4>
+                                <p class="text-sm text-gray-500 leading-5 mb-4">Provides faster transaction, so money arrives in realtime</p>
+                                <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold py-2 px-5 rounded-full">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide -->
+                <div class="swiper-slide w-auto">
+                    <div class="bg-indigo-50 rounded-2xl flex justify-center items-center">
+                        <div class="relative w-80 border border-gray-200 rounded-2xl overflow-hidden shadow transition-all duration-500">
+                            <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Card image" class="w-full h-48 object-cover" />
+                            <div class="p-4">
+                                <h4 class="text-base font-semibold text-gray-900 mb-2 capitalize">Fast Transaction</h4>
+                                <p class="text-sm text-gray-500 leading-5 mb-4">Provides faster transaction, so money arrives in realtime</p>
+                                <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold py-2 px-5 rounded-full">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide -->
+                <div class="swiper-slide w-auto">
+                    <div class="bg-indigo-50 rounded-2xl flex justify-center items-center">
+                        <div class="relative w-80 border border-gray-200 rounded-2xl overflow-hidden shadow transition-all duration-500">
+                            <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Card image" class="w-full h-48 object-cover" />
+                            <div class="p-4">
+                                <h4 class="text-base font-semibold text-gray-900 mb-2 capitalize">Fast Transaction</h4>
+                                <p class="text-sm text-gray-500 leading-5 mb-4">Provides faster transaction, so money arrives in realtime</p>
+                                <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold py-2 px-5 rounded-full">Read More</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="./images/r1.jpeg" class="d-block w-100" alt="Imagen 1">
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="./images/r2.jpeg" class="d-block w-100" alt="Imagen 2">
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="./images/r3.jpeg" class="d-block w-100" alt="Imagen 3">
-                </div>
+
+            <!-- Navigation Buttons -->
+            <div class="absolute flex justify-center items-center left-0 right-0 w-fit bottom-0 mx-auto gap-6 mt-6">
+                <button id="slider-button-left" class="swiper-button-prev group p-2 flex justify-center items-center border border-indigo-600 w-12 h-12 transition-all duration-500 rounded-full hover:bg-indigo-600" data-carousel-prev>
+                    <svg class="h-5 w-5 text-indigo-600 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+                        <path d="M10.0002 11.9999L6 7.99971L10.0025 3.99719" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <button id="slider-button-right" class="swiper-button-next group p-2 flex justify-center items-center border border-indigo-600 w-12 h-12 transition-all duration-500 rounded-full hover:bg-indigo-600" data-carousel-next>
+                    <svg class="h-5 w-5 text-indigo-600 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+                        <path d="M5.99984 4.00012L10 8.00029L5.99748 12.0028" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
         </div>
     </section>
 
-    <section>
-        <div class="container my-4">
-            <div class="card-carousel d-flex overflow-auto" id="drag-scroll">
-                <div class="card me-3" style="min-width: 250px;">
-                    <img src="https://via.placeholder.com/250x150" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Card 1</h5>
-                        <p class="card-text">Contenido de la tarjeta 1.</p>
-                    </div>
-                </div>
-                <div class="card me-3" style="min-width: 250px;">
-                    <img src="https://via.placeholder.com/250x150" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Card 2</h5>
-                        <p class="card-text">Contenido de la tarjeta 2.</p>
-                    </div>
-                </div>
-                <div class="card me-3" style="min-width: 250px;">
-                    <img src="https://via.placeholder.com/250x150" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Card 3</h5>
-                        <p class="card-text">Contenido de la tarjeta 3.</p>
-                    </div>
-                </div>
-                <div class="card me-3" style="min-width: 250px;">
-                    <img src="https://via.placeholder.com/250x150" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Card 4</h5>
-                        <p class="card-text">Contenido de la tarjeta 4.</p>
-                    </div>
-                </div>
-                <div class="card me-3" style="min-width: 250px;">
-                    <img src="https://via.placeholder.com/250x150" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Card 1</h5>
-                        <p class="card-text">Contenido de la tarjeta 1.</p>
-                    </div>
-                </div>
-                <div class="card me-3" style="min-width: 250px;">
-                    <img src="https://via.placeholder.com/250x150" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Card 2</h5>
-                        <p class="card-text">Contenido de la tarjeta 2.</p>
-                    </div>
-                </div>
-                <div class="card me-3" style="min-width: 250px;">
-                    <img src="https://via.placeholder.com/250x150" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Card 3</h5>
-                        <p class="card-text">Contenido de la tarjeta 3.</p>
-                    </div>
-                </div>
-                <div class="card me-3" style="min-width: 250px;">
-                    <img src="https://via.placeholder.com/250x150" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Card 4</h5>
-                        <p class="card-text">Contenido de la tarjeta 4.</p>
-                    </div>
-                </div>
-                <!-- Agrega más cards si quieres -->
-            </div>
-        </div>
-    </section>
 
 
-    <section id="escenario">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h2>Escenario</h2>
-                    <p>
-                        Aquí puedes describir tu producto, servicio o propuesta de valor.
-                        Es buena idea usar frases claras y concisas.
-                    </p>
-                    <a href="#" class="btn btn-primary">Saber más</a>
-                </div>
-                <div class="col-md-6">
-                    <img src="./images/p1.jpeg" class="img-fluid" alt="Descripción imagen">
-                </div>
-            </div>
-        </div>
 
-    </section>
-    <section id="sonido">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <img src="./images/p1.jpeg" class="img-fluid" alt="Descripción imagen">
-                </div>
-                <div class="col-md-6">
-                    <h2>Sonido</h2>
-                    <p>
-                        Aquí puedes describir tu producto, servicio o propuesta de valor.
-                        Es buena idea usar frases claras y concisas.
-                    </p>
-                    <a href="#" class="btn btn-primary">Saber más</a>
-                </div>
-
-            </div>
-        </div>
-
-    </section>
-    <section id="ticketera">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h2>Ticketera</h2>
-                    <p>
-                        Aquí puedes describir tu producto, servicio o propuesta de valor.
-                        Es buena idea usar frases claras y concisas.
-                    </p>
-                    <a href="#" class="btn btn-primary">Saber más</a>
-                </div>
-                <div class="col-md-6">
-                    <img src="./images/p1.jpeg" class="img-fluid" alt="Descripción imagen">
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <section id="experiencia">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h2>Experiencia</h2>
-                    <p>
-                        Aquí puedes describir tu producto, servicio o propuesta de valor.
-                        Es buena idea usar frases claras y concisas.
-                    </p>
-                    <a href="#" class="btn btn-primary">Saber más</a>
-                </div>
-                <div class="col-md-6">
-                    <img src="./images/p1.jpeg" class="img-fluid" alt="Descripción imagen">
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-
-    <!-- Texto centrado debajo del navbar -->
-    <!--  -->
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const scrollContainer = document.getElementById('drag-scroll');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        scrollContainer.addEventListener('mousedown', (e) => {
-            isDown = true;
-            scrollContainer.classList.add('cursor-grabbing');
-            startX = e.pageX - scrollContainer.offsetLeft;
-            scrollLeft = scrollContainer.scrollLeft;
-        });
-
-        scrollContainer.addEventListener('mouseleave', () => {
-            isDown = false;
-            scrollContainer.classList.remove('cursor-grabbing');
-        });
-
-        scrollContainer.addEventListener('mouseup', () => {
-            isDown = false;
-            scrollContainer.classList.remove('cursor-grabbing');
-        });
-
-        scrollContainer.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - scrollContainer.offsetLeft;
-            const walk = (x - startX) * 1.5;
-            scrollContainer.scrollLeft = scrollLeft - walk;
-        });
-    </script>
+    <script src="index.js"></script>
 
 </body>
 
