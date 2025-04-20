@@ -346,6 +346,7 @@ h1 {
 @media (max-width: 900px) {
   .carousel-container {
     margin-top: 115px;
+    width: 100%;
     /* Baja un poco más si querés */
   }
 }
