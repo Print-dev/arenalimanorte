@@ -14,11 +14,12 @@
   background: #4F46E5 !important;
   } */
 
-  *{
+* {
   margin: 0;
   padding: 0;
-  
-  }
+
+}
+
 li {
   font-family: "Righteous", sans-serif;
   font-size: 14px;
@@ -42,14 +43,40 @@ h1 {
   height: auto;
 }
 
-.background-blur-carousel {
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Fondo que cubre toda la página y se desplaza con el scroll */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: transparent;
+  /* Elimina el fondo del body */
+}
+
+/* Si usas .background-blur (opcional): */
+.background-blur {
   position: fixed;
-  top: -10px;
-  left: -10px;
-  width: calc(100% + 20px);
-  height: calc(100vh + 20px);
+  /* Fijo para evitar cortes */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: -1;
-  overflow: hidden;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.613)),
+    url('./images/FONDO.png');
+  background-size: cover;
+  /* Cubre toda el área sin deformar */
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
 }
 
 .bg-slide {
@@ -138,7 +165,7 @@ h1 {
 .swiper-slide-coverflow {
   width: 100%;
   max-width: 450px;
-  height: 520px;
+  height: 630px;
 
   /* <-- Aumenta este valor para PC */
   display: flex;
@@ -149,7 +176,7 @@ h1 {
 }
 
 .swiper-img-coverflow {
-  background-color: rgba(0, 0, 0, 0.465);
+  background-color: #05f2da67;
   width: 100%;
   object-fit: cover;
   border-radius: 8px;
@@ -167,7 +194,7 @@ h1 {
 
 .swiper-card-container {
   width: 100%;
-  height:  100%;
+  height: 100%;
 }
 
 .swiper-card-slider {
@@ -332,7 +359,7 @@ h1 {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-#carouselExampleFade {
+#carouselprincipal {
   border-radius: 20px;
   margin: 0px;
   margin-top: 0px;
@@ -354,7 +381,7 @@ h1 {
 
 /* Si el usuario tiene zoom muy bajo (viewport más chico), le damos margen */
 @media (min-width: 2500px) {
-  #carouselExampleFade {
+  #carouselprincipal {
     overflow: hidden;
     margin: 250px;
     margin-top: 150px;
@@ -423,4 +450,20 @@ h1 {
 .swiper-button-next {
   padding: 40px;
   background-color: aquamarine;
+}
+
+/* ****************************************** ESCENARIO CONTAINER ************************************************** */
+
+.carousel-fade-container {
+  position: relative;
+}
+
+.fade-text-overlay {
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }

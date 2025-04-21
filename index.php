@@ -5,10 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Arena Lima Norte</title>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- BOOTSTRAP ICONS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
@@ -16,11 +21,488 @@
     <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
 
-    <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/corporate-ui-dashboard.css" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+
+    <!-- Otros recursos -->
+    <link rel="shortcut icon"
+        href="https://res.cloudinary.com/dynpy0r4v/image/upload/v1744848217/arenalimanorte/z1yjapubxokft2dmvodw.png"
+        type="image/x-png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+
+<body class="bg-black text-white">
+
+    <div class="background-blur">
+
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark w-100 z-3 fixed-top py-3" id="mainNavbar">
+        <div class="container-fluid px-4">
+            <!-- Izquierda: Logo -->
+            <a class="navbar-brand me-3" href="#">
+                <img src="https://res.cloudinary.com/dynpy0r4v/image/upload/v1744859794/arenalimanorte/oincvsofctmbhuoqnhlc.png"
+                    width="200" alt="Logo">
+            </a>
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Centro: Items centrados -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item"><a class="nav-link text-white" href="#quienes">Quienes somos</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#eventos">Eventos próximos</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#experiencias">Experiencias</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#contactos">Contáctanos</a></li>
+                </ul>
+            </div>
+
+            <!-- Derecha: Botón -->
+            <div class="d-none d-lg-flex ms-auto">
+                <a href="https://altoketicket.com.pe" target="_blank" class="btn-card p-3 rounded-5"><i class="bi bi-ticket"></i>
+                    Ticketera</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CAROUSEL -->
+    <div class="carousel-container position-relative">
+        <!-- Texto fijo arriba -->
+        <!-- <div class="carousel-text-overlay">            
+            <a href="https://altoketicket.com.pe" class="btn-card btn-lg mt-3 shadow">Comprar Tickets</a>
+        </div>
+ -->
+        <!-- El carousel -->
+        <div id="carouselprincipal" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner" data-bs-interval="1000">
+                <div class="carousel-item active">
+                    <img src="./images/FT1.png"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/FT2.png"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/FT3.png"
+                        class="d-block w-100" alt="...">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselprincipal"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselprincipal"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- CARD CAROUSEL -->
+    <section class="mt-5 position-relative overflow-hidden swiper-wrapper-coverflow" id="eventos">
+        <div class="container ">
+
+            <div class="text-start mb-4">
+                <h2>Próximos eventos</h2>
+            </div>
+            <swiper-container class="mySwiper swiper-coverflow" slides-per-view="1" breakpoints='{
+                "0": { "slidesPerView": 1 },
+                "768": { "slidesPerView": 2 },
+                "1024": { "slidesPerView": 3 }
+              }' centered-slides="true" initial-slide="1" space-between="0" navigation="true" navigation="true"
+                centered-slides="true" pagination="false">
+                <swiper-slide class="swiper-slide-coverflow">
+                    <div class="card swiper-img-coverflow ">
+                        <img class="card-img-top"
+                            src="./images/estefany.png" />
+                        <div class="card-overlay">
+                            <div class="card-text-content">
+                                <h5 class="card-title fw-bolder" style="font-size: 20px;">Azucena Calvay en casa grande
+                                </h5>
+                                <div class="mt-3"></div>
+
+                                <div class="card-icon-text">
+                                    <!-- Calendario -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
+                                        viewBox="0 0 30 30">
+                                        <path fill="#fff"
+                                            d="M22 9.108h-1v-2a1 1 0 1 0-2 0v4h-1v-2h-5v-2a1 1 0 1 0-2 0v4h-1v-2H8a2 2 0 0 0-2 2v10.999a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V11.108a2 2 0 0 0-2-2m0 12.999H8v-7.999h14z">
+                                        </path>
+                                    </svg>
+                                    <span style="font-size: 18px;">Abril 30-2025 - 9:00 PM</span>
+                                </div>
+
+                                <div class="card-icon-text">
+                                    <!-- Ubicación -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
+                                        viewBox="0 0 24 24">
+                                        <path fill="#fff"
+                                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7m0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z">
+                                        </path>
+                                    </svg>
+                                    <span style="font-size: 18px;">Casa Grande - Ascope</span>
+                                </div>
+                                <div class="mt-4"></div>
+
+                                <a href="https://altoketicket.com.pe" target="_blank" class="btn-card">Tickets</a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </swiper-slide>
+                <swiper-slide class="swiper-slide-coverflow">
+                    <div class="card swiper-img-coverflow ">
+                        <img class="card-img-top"
+                            src="https://altoketicket.com.pe/assets/admin/img/event/thumbnail/1744271497.png" />
+                        <div class="card-overlay">
+                            <div class="card-text-content">
+                                <h5 class="card-title fw-bolder" style="font-size: 20px;">Azucena Calvay en casa grande
+                                </h5>
+                                <div class="mt-3"></div>
+
+                                <div class="card-icon-text">
+                                    <!-- Calendario -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
+                                        viewBox="0 0 30 30">
+                                        <path fill="#fff"
+                                            d="M22 9.108h-1v-2a1 1 0 1 0-2 0v4h-1v-2h-5v-2a1 1 0 1 0-2 0v4h-1v-2H8a2 2 0 0 0-2 2v10.999a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V11.108a2 2 0 0 0-2-2m0 12.999H8v-7.999h14z">
+                                        </path>
+                                    </svg>
+                                    <span style="font-size: 18px;">Abril 30-2025 - 9:00 PM</span>
+                                </div>
+
+                                <div class="card-icon-text">
+                                    <!-- Ubicación -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
+                                        viewBox="0 0 24 24">
+                                        <path fill="#fff"
+                                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7m0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z">
+                                        </path>
+                                    </svg>
+                                    <span style="font-size: 18px;">Casa Grande - Ascope</span>
+                                </div>
+                                <div class="mt-4"></div>
+                                <a href="https://altoketicket.com.pe" target="_blank" class="btn-card">Tickets</a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </swiper-slide>
+                <swiper-slide class="swiper-slide-coverflow">
+                    <div class="card swiper-img-coverflow ">
+                        <img class="card-img-top"
+                            src="https://altoketicket.com.pe/assets/admin/img/event/thumbnail/1744272486.png" />
+                        <div class="card-overlay">
+                            <div class="card-text-content">
+                                <h5 class="card-title fw-bolder" style="font-size: 20px;">Azucena Calvay en casa grande
+                                </h5>
+                                <div class="mt-3"></div>
+
+                                <div class="card-icon-text">
+                                    <!-- Calendario -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
+                                        viewBox="0 0 30 30">
+                                        <path fill="#fff"
+                                            d="M22 9.108h-1v-2a1 1 0 1 0-2 0v4h-1v-2h-5v-2a1 1 0 1 0-2 0v4h-1v-2H8a2 2 0 0 0-2 2v10.999a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V11.108a2 2 0 0 0-2-2m0 12.999H8v-7.999h14z">
+                                        </path>
+                                    </svg>
+                                    <span style="font-size: 18px;">Abril 30-2025 - 9:00 PM</span>
+                                </div>
+
+                                <div class="card-icon-text">
+                                    <!-- Ubicación -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
+                                        viewBox="0 0 24 24">
+                                        <path fill="#fff"
+                                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7m0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z">
+                                        </path>
+                                    </svg>
+                                    <span style="font-size: 18px;">Casa Grande - Ascope</span>
+                                </div>
+                                <div class="mt-4"></div>
+                                <a href="https://altoketicket.com.pe" target="_blank" class="btn-card">Tickets</a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </swiper-slide>
+            </swiper-container>
+        </div>
+    </section>
+    <!-- Quienesa somos -->
+    <section class="ticketera-section py-5 mt-5" id="quienes">
+        <div class="container">
+            <div class="card shadow-lg border-0 bg-transparent">
+                <div class="row g-0 contenedor-ticktera">
+                    <div class="col-md-4 img-ticketera">
+                        <img src="https://prismic-assets-cdn.tomorrowland.com/Z-LgpndAxsiBv4-v_UNITY_KEYART_02_LANDSCAPE.png?crop=810%2C1080%2C555%2C0&width=600&height=800"
+                            alt="Insomniac x Tomorrowland" class="img-fluid rounded-start h-100 object-fit-cover ">
+                    </div>
+                    <div class="col-md-8 contenedor-body-ticketera">
+                        <div class="card-body d-flex flex-column justify-content-between h-100  p-5">
+                            <div>
+                                <h5 class="card-title mb-2">¿Quienes somos?</h5>
+                                <p class="card-text mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                                    repellendus eius quam recusandae veritatis consequatur eveniet voluptate quos
+                                    mollitia ipsum iste, excepturi earum quod sed? In doloremque neque ex cupiditate!.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ESCENARIO -->
+    <section id="escenario">
+        <div class="carousel-fade-container position-relative">
+
+            <!-- Texto centrado encima del carrusel -->
+            <div class="fade-text-overlay position-absolute w-100 text-center">
+                ¡Bienvenido al Escenario!
+            </div>
+
+            <!-- Carrusel Bootstrap -->
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./images/FT4.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/FT5.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- SONIDO -->
+    <section id="escenario">
+        <div class="container py-5 mt-5">
+            <h2>Sonido</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut laborum ipsum similique. Similique
+                veniam enim cumque suscipit earum, sequi laborum, modi temporibus sit eum magni quibusdam ut
+                quis pariatur dignissimos?.</p>
+            <div class="row align-items-center">
+                <swiper-container class="mySwiper" pagination="true" class="swiper-container-experiencias">
+                    <swiper-slide class="swiper-slide-experiencias">
+                        <img src="https://elminc.ca/images/page_uploads/1610753877.png" alt="">
+                    </swiper-slide>
+                    <swiper-slide class="swiper-slide-experiencias">
+                        <img src="https://elminc.ca/images/page_uploads/1610753877.png" alt="">
+                    </swiper-slide>
+                    <swiper-slide class="swiper-slide-experiencias">
+                        <img src="https://elminc.ca/images/page_uploads/1610753877.png" alt="">
+                    </swiper-slide>
+                    <swiper-slide class="swiper-slide-experiencias">
+                        <img src="https://elminc.ca/images/page_uploads/1610753877.png" alt="">
+                    </swiper-slide>
+                    <swiper-slide class="swiper-slide-experiencias">
+                        <img src="https://elminc.ca/images/page_uploads/1610753877.png" alt="">
+                    </swiper-slide>
+                    <swiper-slide class="swiper-slide-experiencias">
+                        <img src="https://elminc.ca/images/page_uploads/1610753877.png" alt="">
+                    </swiper-slide>
+                    <swiper-slide class="swiper-slide-experiencias">
+                        <img src="https://elminc.ca/images/page_uploads/1610753877.png" alt="">
+                    </swiper-slide>
+                    <swiper-slide class="swiper-slide-experiencias">
+                        <img src="https://elminc.ca/images/page_uploads/1610753877.png" alt="">
+                    </swiper-slide>
+                </swiper-container>
+            </div>
+        </div>
+    </section>
+
+    <!-- TICKETERA -->
+    <section class="ticketera-section py-5 mt-5">
+        <div class="container">
+            <h2 class="mb-4">Ticketera</h2>
+            <p class="card-text mb-3 fs-5">Mantengase informado.</p>
+
+            <div class="card shadow-lg border-0 bg-transparent">
+                <div class="row g-0 contenedor-ticktera">
+                    <div class="col-md-4 img-ticketera">
+                        <img src="https://englishrose.com/cdn/shop/products/hitsdd_photo_gal__photo_1194882931_lr_600x.png?v=1663020991"
+                            alt="Insomniac x Tomorrowland" class="img-fluid rounded-start h-100 object-fit-cover ">
+                    </div>
+                    <div class="col-md-8 contenedor-body-ticketera">
+                        <div class="card-body d-flex flex-column justify-content-between h-100  p-5">
+                            <div>
+                                <h5 class="card-title mb-2">Tickera actualizad al dia</h5>
+                                <p class="card-text mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                                    repellendus eius quam recusandae veritatis consequatur eveniet voluptate quos
+                                    mollitia ipsum iste, excepturi earum quod sed? In doloremque neque ex cupiditate!.
+                                </p>
+                            </div>
+                            <div class="mt-4">
+                                <a href="https://altoketicket.com.pe/" target="_blank" class="btn-card">
+                                    Ir a AltokeTicket.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCIAS -->
+    <section class="py-5 mt-5 " id="experiencias">
+        <div class="container">
+            <h2 class="mb-4">Experiencias</h2>
+            <p class="card-text mb-3 fs-5">Pequeño resumen.</p>
+
+            <swiper-container class="mySwiper" pagination="true" class="swiper-container-experiencias">
+                <swiper-slide class="swiper-slide-experiencias">
+                    <img src="https://elminc.ca/images/page_uploads/1610753877.png" alt="">
+                </swiper-slide>
+                <swiper-slide class="swiper-slide-experiencias">
+                    <img src="https://elminc.ca/images/page_uploads/1610753877.png" alt="">
+                </swiper-slide>
+                <swiper-slide class="swiper-slide-experiencias">
+                    <img src="https://elminc.ca/images/page_uploads/1610753877.png" alt="">
+                </swiper-slide>
+                <swiper-slide class="swiper-slide-experiencias">
+                    <img src="https://elminc.ca/images/page_uploads/1610753877.png" alt="">
+                </swiper-slide>
+                <swiper-slide class="swiper-slide-experiencias">
+                    <img src="https://elminc.ca/images/page_uploads/1610753877.png" alt="">
+                </swiper-slide>
+                <swiper-slide class="swiper-slide-experiencias">
+                    <img src="https://elminc.ca/images/page_uploads/1610753877.png" alt="">
+                </swiper-slide>
+                <swiper-slide class="swiper-slide-experiencias">
+                    <img src="https://elminc.ca/images/page_uploads/1610753877.png" alt="">
+                </swiper-slide>
+                <swiper-slide class="swiper-slide-experiencias">
+                    <img src="https://elminc.ca/images/page_uploads/1610753877.png" alt="">
+                </swiper-slide>
+            </swiper-container>
+        </div>
+    </section>
+
+    <!-- CONTACTOS -->
+    <!--  <section class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="mb-4 text-center">Contáctanos</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre completo</label>
+                        <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Asunto</label>
+                        <input type="text" class="form-control" id="subject" placeholder="Asunto del mensaje" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Escribe tu mensaje aquí..."
+                            required></textarea>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Enviar mensaje</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- FOOTER -->
+    <footer class="footer-blur text-white py-5" id="contactos">
+        <div class="container text-center">
+
+            <!-- Logo centrado -->
+            <img src="https://res.cloudinary.com/dynpy0r4v/image/upload/v1744848217/arenalimanorte/z1yjapubxokft2dmvodw.png"
+                alt="Logo" width="60" height="60" class="mb-3">
+
+            <!-- Líneas + redes sociales -->
+            <div class="d-flex align-items-center justify-content-center mb-4">
+                <div class="flex-grow-1 border-top me-3 opacity-50"></div>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-tiktok"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-discord"></i></a>
+                </div>
+                <div class="flex-grow-1 border-top ms-3 opacity-50"></div>
+            </div>
+
+            <!-- Menú de enlaces -->
+            <div class="row text-uppercase small mt-4">
+                <div class="col-6 col-md-3 mb-3">
+                    <strong>Contactos</strong><br>
+                    <a href="https://wa.me/51973189350" target="_blank" class="text-white-50 text-decoration-none d-block mt-2">+51 999333111</a>
+                    <a href="#" class="text-white-50 text-decoration-none d-block">+51 999340123</a>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <strong>Correos</strong><br>
+                    <a href="#" class="text-white-50 text-decoration-none d-block mt-2">test@gmail.com</a>
+                    <a href="#" class="text-white-50 text-decoration-none d-block">test@gmail.com</a>
+                    <a href="#" class="text-white-50 text-decoration-none d-block">test@gmail.com</a>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <strong>Ticketera oficial</strong><br>
+                    <a href="https://altoketicket.com.pe/" target="_blank" class="text-white-50 text-decoration-none d-block mt-2">https://altoketicket.com.pe/</a>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <strong>Dirección</strong><br>
+                    <a href="#" class="text-white-50 text-decoration-none d-block mt-2">Av Tomas Valle N000</a>
+                </div>
+            </div>
+
+            <!-- Créditos -->
+            <p class="mt-4 text-muted small">©2025. Respaldado por Vega Producciones.</p>
+        </div>
+    </footer>
+
 
     <!-- Core -->
     <script src="../assets/js/core/popper.min.js"></script>
@@ -29,150 +511,22 @@
     <!-- Theme JS -->
     <script src="../assets/js/corporate-ui-dashboard.min.js"></script>
     <script src="../../assets/js/plugins/swiper-bundle.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="estilo.css">
-
-</head>
-
-<body class="bg-black text-white font-righteous">
-    <!-- Navbar fijo con fondo blur -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 
-    <nav class="bg-dark dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="https://res.cloudinary.com/dynpy0r4v/image/upload/v1744859794/arenalimanorte/oincvsofctmbhuoqnhlc.png" alt="Logo" class="w-48">
-            </a>
-            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
-                <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
-                    </svg>
-                </button>
-            </div>
-            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-dark md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-dark dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                    <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Quienes somos</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Eventos próximos</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Vive la experiencia</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contáctanos</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <body class="g-sidenav-show bg-gray-100">
-
-        <h1>Hello, world!</h1>
-
-        <!--   Core JS Files   -->
-        <script src="../assets/js/core/popper.min.js"></script>
-        <script src="../assets/js/core/bootstrap.min.js"></script>
-
-        <!-- Plugin for the charts, full documentation here: https://www.chartjs.org/ -->
-        <script src="../assets/js/plugins/chartjs.min.js"></script>
-        <script src="../assets/js/plugins/Chart.extension.js"></script>
-
-        <!-- Control Center for Corporate UI Dashboard: parallax effects, scripts for the example pages etc -->
-        <script src="../assets/js/corporate-ui-dashboard.min.js"></script>
-    </body>
-
-    <!-- Imagen principal debajo del navbar -->
-    <section class="w-full flex justify-center relative">
-        <img src="./images/r1.jpeg" alt="Imagen Principal"
-            class="max-w-6xl w-full h-auto object-contain px-4">
-    </section>
-
-    <section class="w-full px-4 py-8">
-        <div class="swiper multiple-slide-carousel swiper-container relative">
-            <div class="swiper-wrapper">
-                <!-- Slide -->
-                <div class="swiper-slide w-auto">
-                    <div class="bg-indigo-50 rounded-2xl flex justify-center items-center">
-                        <div class="relative w-80 border border-gray-200 rounded-2xl overflow-hidden shadow transition-all duration-500">
-                            <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Card image" class="w-full h-48 object-cover" />
-                            <div class="p-4">
-                                <h4 class="text-base font-semibold text-gray-900 mb-2 capitalize">Fast Transaction</h4>
-                                <p class="text-sm text-gray-500 leading-5 mb-4">Provides faster transaction, so money arrives in realtime</p>
-                                <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold py-2 px-5 rounded-full">Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide -->
-                <div class="swiper-slide w-auto">
-                    <div class="bg-indigo-50 rounded-2xl flex justify-center items-center">
-                        <div class="relative w-80 border border-gray-200 rounded-2xl overflow-hidden shadow transition-all duration-500">
-                            <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Card image" class="w-full h-48 object-cover" />
-                            <div class="p-4">
-                                <h4 class="text-base font-semibold text-gray-900 mb-2 capitalize">Fast Transaction</h4>
-                                <p class="text-sm text-gray-500 leading-5 mb-4">Provides faster transaction, so money arrives in realtime</p>
-                                <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold py-2 px-5 rounded-full">Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide -->
-                <div class="swiper-slide w-auto">
-                    <div class="bg-indigo-50 rounded-2xl flex justify-center items-center">
-                        <div class="relative w-80 border border-gray-200 rounded-2xl overflow-hidden shadow transition-all duration-500">
-                            <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Card image" class="w-full h-48 object-cover" />
-                            <div class="p-4">
-                                <h4 class="text-base font-semibold text-gray-900 mb-2 capitalize">Fast Transaction</h4>
-                                <p class="text-sm text-gray-500 leading-5 mb-4">Provides faster transaction, so money arrives in realtime</p>
-                                <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold py-2 px-5 rounded-full">Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide -->
-                <div class="swiper-slide w-auto">
-                    <div class="bg-indigo-50 rounded-2xl flex justify-center items-center">
-                        <div class="relative w-80 border border-gray-200 rounded-2xl overflow-hidden shadow transition-all duration-500">
-                            <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Card image" class="w-full h-48 object-cover" />
-                            <div class="p-4">
-                                <h4 class="text-base font-semibold text-gray-900 mb-2 capitalize">Fast Transaction</h4>
-                                <p class="text-sm text-gray-500 leading-5 mb-4">Provides faster transaction, so money arrives in realtime</p>
-                                <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold py-2 px-5 rounded-full">Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Navigation Buttons -->
-            <div class="absolute flex justify-center items-center left-0 right-0 w-fit bottom-0 mx-auto gap-6 mt-6">
-                <button id="slider-button-left" class="swiper-button-prev group p-2 flex justify-center items-center border border-indigo-600 w-12 h-12 transition-all duration-500 rounded-full hover:bg-indigo-600" data-carousel-prev>
-                    <svg class="h-5 w-5 text-indigo-600 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
-                        <path d="M10.0002 11.9999L6 7.99971L10.0025 3.99719" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-                <button id="slider-button-right" class="swiper-button-next group p-2 flex justify-center items-center border border-indigo-600 w-12 h-12 transition-all duration-500 rounded-full hover:bg-indigo-600" data-carousel-next>
-                    <svg class="h-5 w-5 text-indigo-600 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
-                        <path d="M5.99984 4.00012L10 8.00029L5.99748 12.0028" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </section>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
 
 
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
+
+    <script src="../../assets/js/plugins/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
     <script src="index.js"></script>
 
