@@ -1,11 +1,18 @@
-var swiper = new Swiper(".mySwiper", {
-  effect: "cards",
+var swiper3El = document.querySelector(".mySwiper3");
+Object.assign(swiper3El, {
   grabCursor: true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+  effect: "creative",
+  creativeEffect: {
+    prev: {
+      shadow: true,
+      translate: ["-20%", 0, -1],
+    },
+    next: {
+      translate: ["100%", 0, 0],
+    },
   },
 });
+swiper3El.initialize()
 
 var swiperCards = new Swiper(".swiperCards", {
   loop: true,
@@ -28,3 +35,12 @@ var swiperCards = new Swiper(".swiperCards", {
     }
   }
 });
+
+const slides = document.querySelectorAll('.bg-slide');
+let current = 0;
+
+setInterval(() => {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}, 1000); // cada 5 segundos
