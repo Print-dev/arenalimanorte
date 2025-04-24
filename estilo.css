@@ -619,3 +619,23 @@ li {
     background: linear-gradient(to bottom, black, transparent);
     z-index: 999999999;
 }
+/*  **************************** NAV BAR ************************************** */
+.nav-item {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
