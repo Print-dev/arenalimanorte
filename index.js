@@ -1,34 +1,30 @@
 window.addEventListener('scroll', () => {
-    const texto = document.getElementById('textoEscenario');
-    const escenario = document.getElementById('carouselescenario');
-    const rect = escenario.getBoundingClientRect();
-
-    if (rect.top < window.innerHeight && rect.bottom >= 0) {
-        texto.classList.add('visible');
-    } else {
-        texto.classList.remove('visible');
-    }
-
-    const textoecenario = document.getElementById("textoEscenario");
+    const elementos = [
+        {
+            texto: document.getElementById('textoEscenario'),
+            contenedor: document.getElementById('carouselescenario')
+        },
+        {
+            texto: document.getElementById('textoEscenario2'),
+            contenedor: document.getElementById('carouselsonido')
+        }
+    ];
 
     function isInViewport(el) {
         const rect = el.getBoundingClientRect();
-        return (
-            rect.top < window.innerHeight &&
-            rect.bottom > 0
-        );
+        return rect.top < window.innerHeight && rect.bottom > 0;
     }
 
     function checkScroll() {
-        if (isInViewport(textoecenario)) {
-            textoecenario.classList.add("visible");
-            textoecenario.classList.remove("hidden");
-        } else {
-            textoecenario.classList.remove("visible");
-            textoecenario.classList.add("hidden");
-        }
+        elementos.forEach(({ texto, contenedor }) => {
+            if (isInViewport(contenedor)) {
+                texto.classList.add('visible');
+            } else {
+                texto.classList.remove('visible');
+            }
+        });
     }
 
-    window.addEventListener("scroll", checkScroll);
-    window.addEventListener("load", checkScroll); // para que revise al recargar
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll);
 });
