@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'outersans';
-    src: url('/made_outer_sans/MADE\ Outer\ Sans\ Alt\ Bold\ PERSONAL\ USE.otf') format('opentype');
+    src: url('./made_outer_sans/MADE\ Outer\ Sans\ Alt\ Bold\ PERSONAL\ USE.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'sansserif';
-    src: url('/sf-pro-display/SFPRODISPLAYBOLD.OTF') format('opentype');
+    src: url('./sf-pro-display/SFPRODISPLAYBOLD.OTF') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -15,7 +15,6 @@
 * {
     margin: 0;
     padding: 0;
-
 }
 
 body {

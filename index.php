@@ -87,6 +87,9 @@
         <div id="carouselprincipal" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner" data-bs-interval="1000">
                 <div class="carousel-item active">
+                    <img src="./images/ARENA-LIMA-NORTE-BANNER.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
                     <img src="./images/FT1.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
