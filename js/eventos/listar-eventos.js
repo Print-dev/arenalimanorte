@@ -243,8 +243,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     async function registrarEvento(imagen, link, presentado) {
         const evento = new FormData();
         evento.append("operation", "registrarEvento");
-        evento.append("imagen", imagen); // id usuario recibe la notificacion , ahorita es uno pero luego se cambiara a que sean elegibles
-        evento.append("link", link);
+        evento.append("imagenEvento", imagen); // Nota: este debe coincidir con el nombre esperado en PHP
+        evento.append("linkEvento", link);     // Cambiado de "link" a "linkEvento" para coincidir con PHP
         evento.append("presentado", presentado);
 
         const fevento = await fetch(`${host}complemento.controller.php`, {
@@ -254,9 +254,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         const revento = await fevento.json();
         return revento;
     }
-
     $q(".btnGuardarEvento").addEventListener("click", async (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const imagenInput = $q("#imagenEvento");
         const link = $q("#altoketicket").value.trim();
         const presentado = $q("#presentado").value;
@@ -267,10 +266,25 @@ document.addEventListener("DOMContentLoaded", async () => {
             alert("Por favor selecciona una imagen.");
             return;
         }
-        const rpt = await registrarEvento(file, link, presentado)
-        console.log("rpt -> ", rpt);
 
-    })
+        try {
+            const rpt = await registrarEvento(file, link, presentado);
+            console.log("rpt -> ", rpt);
+
+            if (rpt.success) {
+                // Éxito - puedes mostrar un mensaje o redireccionar
+                alert(rpt.message);
+                // Opcional: limpiar el formulario
+                $q("#form-evento").reset();
+            } else {
+                // Error
+                alert("Error: " + rpt.message);
+            }
+        } catch (error) {
+            console.error("Error en la petición:", error);
+            alert("Ocurrió un error al procesar la solicitud");
+        }
+    });
     /* function btnEditar(e) {
         
     } */
