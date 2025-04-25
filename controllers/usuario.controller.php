@@ -8,15 +8,15 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization"); // Encabeza
 
 $hostOnly  = "http://localhost/arenalimanorte";
 // cuando se pone en visible true se pone como dropdown
-/* $accesos = [
-  'Administrador' => [
-    ['modulo' => 'eventos', 'ruta' => '', 'texto' => 'Eventos', 'subruta' => '', 'visible' => true, 'icono' => 'fa-solid fa-chart-simple'],
+$accesos = [
 
-    ['modulo' => 'eventos', 'ruta' => 'listar-eventos', 'subruta' => '', 'texto' => 'Eventos', 'visible' => false, 'icono' => 'fa-solid fa-list', 'only' => true],
-    ['modulo' => 'eventos', 'ruta' => 'actualizar-evento', 'subruta' => '', 'texto' => '', 'visible' => false, 'icono' => ''],
-    ['modulo' => 'eventos', 'ruta' => 'registrar-evento', 'subruta' => '', 'texto' => '', 'visible' => false, 'icono' => ''],
-  ]
-]; */
+  ['modulo' => 'eventos', 'ruta' => '', 'texto' => 'Gestión', 'subruta' => '', 'visible' => true, 'icono' => 'fa-solid fa-chart-simple'],
+
+  ['modulo' => 'eventos', 'ruta' => 'listar-eventos', 'subruta' => '', 'texto' => 'Eventos', 'visible' => false, 'icono' => 'fa-solid fa-list', 'only' => true],
+  ['modulo' => 'eventos', 'ruta' => 'actualizar-evento', 'subruta' => '', 'texto' => '', 'visible' => false, 'icono' => ''],
+  ['modulo' => 'eventos', 'ruta' => 'registrar-evento', 'subruta' => '', 'texto' => '', 'visible' => false, 'icono' => ''],
+
+];
 
 /* if (!isset($_SESSION['login']) || $_SESSION['login']['estado'] == false) {
   $session = [
@@ -40,7 +40,7 @@ if (isset($_GET['operation'])) {
       header("location:" . $hostOnly);
       break;
 
-    /* case 'obtenerUsuarioPorId':
+      /* case 'obtenerUsuarioPorId':
       echo json_encode($usuario->obtenerUsuarioPorId(['idusuario' => $_GET['idusuario']]));
       break;
 
@@ -60,15 +60,15 @@ if (isset($_GET['operation'])) {
       echo json_encode($usuario->obtenerUsuarioPorNivel(['idnivelacceso' => $_GET['idnivelacceso']]));
       break; */
 
-    /*     case 'obtenerRepresentanteEmpresa':
+      /*     case 'obtenerRepresentanteEmpresa':
       echo json_encode($usuario->obtenerRepresentanteEmpresa());
       break; */
 
-    /* case 'obtenerMarcaAguaPorUsuario':
+      /* case 'obtenerMarcaAguaPorUsuario':
       echo json_encode($usuario->obtenerMarcaAguaPorUsuario(['idusuario' => $_GET['idusuario']]));
       break; */
 
-    /* case 'filtrarUsuarios':
+      /* case 'filtrarUsuarios':
       $cleanData = [
         'nivelacceso' => $_GET['nivelacceso'] === "" ? null : $usuario->limpiarCadena($_GET['nivelacceso']),
         'numdoc' => $_GET['numdoc'] === "" ? null : $usuario->limpiarCadena($_GET['numdoc']),
@@ -86,7 +86,6 @@ if (isset($_GET['operation'])) {
 if (isset($_POST['operation'])) {
   switch ($_POST['operation']) {
     case 'login':
-      $empresaDato = $empresa->obtenerDatosEmpresa();
       $nomUser = $usuario->limpiarCadena($_POST['nom_usuario']);
       $registro = $usuario->login(['nom_usuario' => $nomUser]);
 
@@ -108,20 +107,9 @@ if (isset($_POST['operation'])) {
           $session['estado'] = true;
           //$session['inicio'] = date('h:i:s d-m-Y');
           $session['idusuario'] = $registro[0]['idusuario'];
-          $session['apellidos'] = $registro[0]['apellidos'];
-          $session['nombres'] = $registro[0]['nombres'];
           $session['nom_usuario'] = $registro[0]['nom_usuario'];
           $session['claveacceso'] = $registro[0]['claveacceso'];
-          $session['nivelacceso'] = $registro[0]['nivelacceso'];
-          $session['idnivelacceso'] = $registro[0]['idnivelacceso'];
-          $session['nombreapp'] = $empresaDato[0]['nombreapp'];
-          $session['razonsocial'] = $empresaDato[0]['razonsocial'];
-          $session['ruc'] = $empresaDato[0]['ruc'];
-          $session['logoempresa'] = $empresaDato[0]['logoempresa'];
-
-          //die(json_encode($accesos[$registro[0]['nivelacceso']]));
-          //$accesos = $usuario->getPermisos(['idperfil' => $registro[0]['idperfil']]);
-          $session['accesos'] = $accesos[$registro[0]['nivelacceso']]; //temporal
+          $session['accesos'] = $accesos; //temporal
 
         } else {
           $resultados['mensaje'] = "Error en la contraseña";
@@ -146,7 +134,7 @@ if (isset($_POST['operation'])) {
       echo json_encode($resultados);
       break;
 
-    case 'registrarUsuario':
+      /* case 'registrarUsuario':
       $clave = $usuario->limpiarCadena($_POST['claveacceso']);
       $cleanData = [
         'idsucursal' => $usuario->limpiarCadena($_POST['idsucursal']),
@@ -169,9 +157,9 @@ if (isset($_POST['operation'])) {
       }
 
       echo json_encode($respuesta);
-      break;
+      break; */
 
-    case 'actualizarUsuario':
+      /* case 'actualizarUsuario':
       $clave = $usuario->limpiarCadena($_POST['claveacceso']);
       $cleanData = [
         'idsucursal' => $usuario->limpiarCadena($_POST['idsucursal']) ?  $usuario->limpiarCadena($_POST['idsucursal']) : '',
@@ -218,6 +206,6 @@ if (isset($_POST['operation'])) {
       $update = $usuario->actualizarPersona($cleanData);
 
       echo json_encode($update);
-      break;
+      break; */
   }
 }

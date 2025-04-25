@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$hostOnly = "http://localhost/arenalimanorte/admin";
+$hostOnly = "http://localhost/arenalimanorte";
 
 if (isset($_SESSION['login']) && $_SESSION['login']['estado']) {
-  header('Location:'.$hostOnly.'/views/dashboard');
+  header('Location:' . $hostOnly . '/views/dashboard');
 }
 ?>
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ if (isset($_SESSION['login']) && $_SESSION['login']['estado']) {
 
 <style>
   #access {
-    background: #F2CC0F;
+    background: #00FFEF;
     transition: 0.3s;
     font-weight: bold;
   }
@@ -105,41 +105,9 @@ if (isset($_SESSION['login']) && $_SESSION['login']['estado']) {
   <script src="<?= $hostOnly ?>/js/swalcustom.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-    function mostrarNotificacionVentana(nivelacceso, logoempresa, nombreapp) {
-        if (Notification.permission !== "granted") {
-            Notification.requestPermission().then(permission => {
-                if (permission === "granted") {
-                    enviarNotificacion(nivelacceso);
-                }
-            });
-        } else {
-            enviarNotificacion(nivelacceso, logoempresa, nombreapp);
-        }
-    }
 
-    function enviarNotificacion(nivelacceso, logoempresa, nombreapp) {
-        console.log("nivelacceso -> ", nivelacceso);
-        if (["Filmmaker", "Artista", "Edicion y Produccion"].includes(nivelacceso)) {
-            new Notification(`${nombreapp}`, {
-                body: "¡Bienvenido de nuevo, recuerda revisar tu agenda y tareas diarias!",
-                icon: `https://res.cloudinary.com/dynpy0r4v/image/upload/v1742818076/vegaimagenes/${logoempresa}`,
-            });
-        } else if (["Community Manager"].includes(nivelacceso)){
-          new Notification(`${nombreapp}`, {
-                body: "¡Bienvenido de nuevo, recuerda revisar los contenidos a publicar!",
-                icon: `https://res.cloudinary.com/dynpy0r4v/image/upload/v1742818076/vegaimagenes/${logoempresa}`,
-            });
-        } 
-        else if (nivelacceso === "Administrador") {
-            console.log("soltando la notificacion");
-            new Notification(`${nombreapp}`, {
-                body: "¡Bienvenido de nuevo!",
-                icon: `https://res.cloudinary.com/dynpy0r4v/image/upload/v1742818076/vegaimagenes/${logoempresa}`,
-            });
-        }
-    }
 
-    document.querySelector("#form-login").addEventListener("submit", async (e) => {
+      document.querySelector("#form-login").addEventListener("submit", async (e) => {
         e.preventDefault();
 
         const params = new URLSearchParams();
@@ -148,49 +116,25 @@ if (isset($_SESSION['login']) && $_SESSION['login']['estado']) {
         params.append("claveacceso", document.querySelector("#claveacceso").value);
 
         const resp = await fetch(`${hostOnly}/controllers/usuario.controller.php`, {
-            method: 'POST',
-            body: params
+          method: 'POST',
+          body: params
         });
 
         const data = await resp.json();
         console.log(data);
 
         if (data.login) {
-            if (data.estado == 1) {
-                switch (data.rol) {
-                    case "Artista":
-                        window.location.href = `${hostOnly}/views/agenda/listar-agenda-artista`;
-                        break;
-                    case "Filmmaker":
-                        window.location.href = `${hostOnly}/views/agenda/listar-agenda-filmmaker`;
-                        mostrarNotificacionVentana(data.rol, data.logoempresa, data.nombreapp);
-                        break;
-                    case "Administrador":
-                        window.location.href = `${hostOnly}/views/ventas/listar-atencion-cliente`;
-                        mostrarNotificacionVentana(data.rol, data.logoempresa, data.nombreapp);
-                        break;
-                    case "Edicion y Produccion":
-                        window.location.href = `${hostOnly}/views/agenda/listar-agenda-edicion`;
-                        mostrarNotificacionVentana(data.rol, data.logoempresa, data.nombreapp);
-                        break;
-                    case "Community Manager":
-                        window.location.href = `${hostOnly}/views/agenda/listar-agenda-cmanager`;
-                        mostrarNotificacionVentana(data.rol, data.logoempresa, data.nombreapp);
-                        break;
-                    default:
-                        console.warn("Rol no reconocido:", data.rol);
-                        break;
-                }
-            } else {
-                showToast("Este usuario está deshabilitado, repórtalo a los administradores.", "INFO");
-            }
+          if (data.estado == 1) {
+            window.location.href = `${hostOnly}/views/dashboard`;
+            return
+          } /* else {
+            showToast("Este usuario está deshabilitado, repórtalo a los administradores.", "INFO");
+          } */
         } else {
-            showToast(data.mensaje, "ERROR");
+          showToast(data.mensaje, "ERROR");
         }
+      });
     });
-});
-
-    
   </script>
   <script src="index.js"></script>
 
