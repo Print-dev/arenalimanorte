@@ -215,14 +215,14 @@
             <div class="text-start ">
                 <h2>Próximos eventos.</h2>
             </div>
-            <swiper-container class="mySwiper swiper-coverflow" slides-per-view="1" breakpoints='{
+            <swiper-container class="mySwiper swiper-coverflow" id="swiper-eventos" slides-per-view="1" breakpoints='{
                 "0": { "slidesPerView": 1 },
                 "768": { "slidesPerView": 2 },
                 "1024": { "slidesPerView": 3 }
               }' centered-slides="true" initial-slide="1" space-between="0" navigation="true" navigation="true"
                 centered-slides="true" pagination="false">
                 
-                <swiper-slide class="swiper-slide-coverflow">
+                <!-- <swiper-slide class="swiper-slide-coverflow">
                     <div class="card swiper-img-coverflow ">
                         <a href="https://altoketicket.com.pe/event/lanzamiento-oficial-%22stefany-lozano-y-su-pasi%C3%B3n-morena%22/162" target="_blank">
                             <img class="card-img-top" src="./images/estefany.png" />
@@ -242,7 +242,7 @@
                             <img class="card-img-top" src="./images/estefany.png" />
                         </a>
                     </div>
-                </swiper-slide>
+                </swiper-slide> -->
 
             </swiper-container>
         </div>
@@ -328,14 +328,14 @@
                 </div>
                 <!-- Columna de texto -->
                 <div class="col-md-9">
-                    <swiper-container class="mySwiper swiper-coverflow" slides-per-view="1" breakpoints='{
+                    <swiper-container class="mySwiper swiper-coverflow" id="swiper-experiencias" slides-per-view="1" breakpoints='{
                         "0": { "slidesPerView": 1 },
                         "768": { "slidesPerView": 2 },
                         "1024": { "slidesPerView": 3 }
                       }' centered-slides="true" initial-slide="2" space-between="0" navigation="true" navigation="true"
                         centered-slides="true" pagination="false">
 
-                        <swiper-slide class="swiper-slide-coverflow">
+                       <!--  <swiper-slide class="swiper-slide-coverflow">
                             <div class="card swiper-img-coverflow ">
                                 <img class="card-img-top" src="./images/estefany.png" />
 
@@ -388,7 +388,7 @@
                                 <img class="card-img-top" src="./images/estefany.png" />
 
                             </div>
-                        </swiper-slide>
+                        </swiper-slide> -->
                     </swiper-container>
                 </div>
             </div>

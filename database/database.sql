@@ -22,10 +22,10 @@ CREATE TABLE eventos
     link		varchar(120) not null, -- link del altoketike segun evento
     presentado		tinyint not null -- 0: mostrar, 1: ocultar
 )ENGINE = INNODB;
-select * from eventos;
 CREATE TABLE experiencias
 (
 	idexperiencia	int auto_increment primary key,
-    imagen			varchar(40) not null
+    imagen			varchar(100) not null,
+	presentado		tinyint not null -- 0: mostrar, 1: ocultar
 )ENGINE = INNODB;
 

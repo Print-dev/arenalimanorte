@@ -25,6 +25,7 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Imagen</th>
+                                                <th>Evento relacionado</th>
                                                 <th>Presentado</th>
                                                 <th>Opciones</th>
                                             </tr>
@@ -59,6 +60,10 @@
                             <input class="form-control" type="file" id="imagenEvento" name="imagenEvento" accept="image/*">
                         </div>
 
+                        <div class="mb-3 text-center">
+                            <img id="previewImagenEvento" src="" alt="Previsualización" style="max-width: 100%; height: auto; display: none; border: 1px solid #ccc; padding: 5px; border-radius: 8px;">
+                        </div>
+
                         <div class="mb-3">
                             <label for="altoketicket" class="form-label">Link evento altoketicket</label>
                             <input type="text" class="form-control" id="altoketicket" name="altoketicket" placeholder="Ingrese al link del evento de altoketicket">
@@ -67,13 +72,55 @@
                         <div class="mb-3">
                             <label for="presentado" class="form-label">¿Presentado?</label>
                             <select class="form-select" id="presentado" name="presentado">
-                                <option value="1">Sí</option>
-                                <option value="0">No</option>
+                                <option value="0">Sí</option>
+                                <option value="1">No</option>
                             </select>
                         </div>
 
                         <div class="text-end">
                             <button type="submit" class="btn btn-primary btnGuardarEvento">Guardar evento</button>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-editarevento" tabindex="-1" aria-labelledby="modaleditarevento" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modaleditarevento">Editar evento</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-evento">
+                        <div class="mb-3">
+                            <label for="imagenEventoEditar" class="form-label">Imagen del evento</label>
+                            <input class="form-control" type="file" id="imagenEventoEditar" name="imagenEventoEditar" accept="image/*">
+                        </div>
+
+                        <div class="mb-3 text-center">
+                            <img id="imagenRender" src="" alt="Previsualización" style="max-width: 100%; height: auto; display: none; border: 1px solid #ccc; padding: 5px; border-radius: 8px;">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="altoketicketlink" class="form-label">Link evento altoketicket</label>
+                            <input type="text" class="form-control" id="altoketicketlink" name="altoketicketlink" placeholder="Ingrese al link del evento de altoketicket">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="presentadoobt" class="form-label">¿Presentado?</label>
+                            <select class="form-select" id="presentadoobt" name="presentadoobt">
+                                <option value="0">Sí</option>
+                                <option value="1">No</option>
+                            </select>
+                        </div>
+
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary btnEditarEvento">Actualizar evento</button>
                         </div>
                     </form>
                 </div>

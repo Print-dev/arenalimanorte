@@ -125,7 +125,7 @@ if (isset($_SESSION['login']) && $_SESSION['login']['estado']) {
 
         if (data.login) {
           if (data.estado == 1) {
-            window.location.href = `${hostOnly}/views/dashboard`;
+            window.location.href = `${hostOnly}/admin/gestion/listar-eventos`;
             return
           } /* else {
             showToast("Este usuario está deshabilitado, repórtalo a los administradores.", "INFO");

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
     let myTable = null;
-    let idevento
+    let idexperiencia
     let imgObtenido
 
     // MODALES
@@ -22,10 +22,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // **************************************** OBTENER DATA *****************************************************
 
-    async function obtenerEventoPorId(idevento) {
+    async function obtenerExperienciaPorId(idexperiencia) {
         const params = new URLSearchParams();
-        params.append("operation", "obtenerEventoPorId");
-        params.append("idevento", idevento);
+        params.append("operation", "obtenerExperienciaPorId");
+        params.append("idexperiencia", idexperiencia);
         const data = await getDatos(`${host}complemento.controller.php`, params);
         console.log("data _>>><", data);
         return data;
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // ******************************* CONFIGURACION DE TABLA *******************************************************
 
     function createTable(data) {
-        let rows = $("#tb-body-evento").find("tr");
+        let rows = $("#tb-body-experiencia").find("tr");
         ////console.log(rows.length);
         if (data.length > 0) {
             if (myTable) {
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
             } else {
                 // Inicializa DataTable si no ha sido inicializado antes
-                myTable = $("#table-eventos").DataTable({
+                myTable = $("#table-experiencias").DataTable({
                     paging: true,
                     searching: false,
                     lengthMenu: [5, 10, 15, 20],
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     function changeByFilters() {
         const filters = $all(".filter");
-        $q("#table-eventos tbody").innerHTML = "";
+        $q("#table-experiencias tbody").innerHTML = "";
         filters.forEach((x) => {
             x.addEventListener("change", async () => {
                 await dataFilters();
@@ -130,15 +130,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     async function dataFilters() {
         const params = new URLSearchParams();
-        params.append("operation", "obtenerEventos");
+        params.append("operation", "obtenerExperiencias");
         //alert("asdasdd")
         const data = await getDatos(`${host}complemento.controller.php`, params);
         //console.log(data);
         console.log("data -> ", data)
-        $q("#table-eventos tbody").innerHTML = "";
+        $q("#table-experiencias tbody").innerHTML = "";
 
         if (data.length === 0) {
-            $q("#table-eventos tbody").innerHTML = `
+            $q("#table-experiencias tbody").innerHTML = `
               <tr>
                 <td colspan="9">Sin resultados</td>
               </tr>
@@ -146,22 +146,19 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         data.forEach((x, i) => {
-            $q("#table-eventos tbody").innerHTML += `
+            $q("#table-experiencias tbody").innerHTML += `
               <tr>
-                <td>${x.idevento}</td>
-        <td><img src="https://res.cloudinary.com/dynpy0r4v/image/upload/v1745593192/${x.imagen}" alt="Imagen del evento" style="width: 100px; height: auto; object-fit: cover;" /></td>
-                                        <td>${x.link}</td>
-
+                <td>${x.idexperiencia}</td>
+                <td><img src="https://res.cloudinary.com/dynpy0r4v/image/upload/v1745593192/${x.imagen}" alt="Imagen del evento" style="width: 100px; height: auto; object-fit: cover;" /></td>
                 <td>
-
-                    <select name="presentado" id="presentado" class="form-select selectpresentado" data-idevento=${x.idevento} required>
-                            <option value="0" ${x.presentado == 0 ? "" : "Selected"}>Si</option>
-                            <option value="1" ${x.presentado == 0 ? "" : "Selected"}>No</option>
-                        </select>
+                    <select name="presentado" id="presentado" class="form-select selectpresentado" data-idexperiencia=${x.idexperiencia} required>
+                        <option value="0" ${x.presentado == 0 ? "" : "Selected"}>Si</option>
+                        <option value="1" ${x.presentado == 0 ? "" : "Selected"}>No</option>
+                    </select>
                 </td>
                 <td>                
-                    <i class="bi bi-pen btn-editar border-0 bg-white" style="cursor: pointer;" data-idevento=${x.idevento} title="Editar"></i>
-                    <i class="bi bi-trash btn-eliminar border-0 bg-white" style="cursor: pointer;" data-idevento=${x.idevento} title="Eliminar"></i>                    
+                    <i class="bi bi-pen btn-editar border-0 bg-white" style="cursor: pointer;" data-idexperiencia=${x.idexperiencia} title="Editar"></i>
+                    <i class="bi bi-trash btn-eliminar border-0 bg-white" style="cursor: pointer;" data-idexperiencia=${x.idexperiencia} title="Eliminar"></i>                    
                 </td>
               </tr>
               `;
@@ -171,16 +168,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         $all(".btn-editar").forEach(btn => {
             btn.addEventListener("click", async (e) => {
-                idevento = btn.getAttribute("data-idevento")
-                console.log(idevento);
-                const evento = await obtenerEventoPorId(idevento)
+                idexperiencia = btn.getAttribute("data-idexperiencia")
+                console.log(idexperiencia);
+                const evento = await obtenerExperienciaPorId(idexperiencia)
                 console.log("evento obtenido por id -> ", evento);
                 $q("#imagenRender").src = `https://res.cloudinary.com/dynpy0r4v/image/upload/v1745593192/${evento[0]?.imagen}`
                 imgObtenido = evento[0]?.imagen
                 $q("#imagenRender").style.display = "block";
-                $q("#altoketicketlink").value = evento[0]?.link
                 $q("#presentadoobt").value = evento[0]?.presentado
-                new bootstrap.Modal("#modal-editarevento").show()
+                new bootstrap.Modal("#modal-editarexperiencia").show()
 
 
             })
@@ -188,12 +184,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         $all(".btn-eliminar").forEach(btn => {
             btn.addEventListener("click", async (e) => {
-                idevento = btn.getAttribute("data-idevento")
-                console.log(idevento);
-                const eventoObt = await obtenerEventoPorId(idevento)
+                idexperiencia = btn.getAttribute("data-idexperiencia")
+                console.log(idexperiencia);
+                const eventoObt = await obtenerExperienciaPorId(idexperiencia)
                 console.log("evento obtenido por id -> ", eventoObt);
                 imgObtenido = eventoObt[0]?.imagen
-                const eventoelim = await eliminarEvento(idevento, imgObtenido)
+                const eventoelim = await eliminarExperiencia(idexperiencia, imgObtenido)
                 console.log("evento obtenido por id -> ", eventoelim);
                 await dataFilters()
                 showToast("Eliminado!", "SUCCESS")
@@ -203,10 +199,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         $all(".selectpresentado").forEach(select => {
             select.addEventListener("change", async (e) => {
-                idevento = select.getAttribute("data-idevento")
-                console.log("id evento ->> ", idevento);
+                idexperiencia = select.getAttribute("data-idexperiencia")
+                console.log("id evento ->> ", idexperiencia);
                 console.log("select value ", select.value);
-                const presentadoActualizado = await actualizarPresentadoEvento(idevento, select.value)
+                const presentadoActualizado = await actualizarPresentadoExperiencia(idexperiencia, select.value)
                 await dataFilters()
                 console.log("presnetado actualizado ?_< ", presentadoActualizado);
             })
@@ -215,7 +211,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function createTable(data) {
-        let rows = $("#tb-body-evento").find("tr");
+        let rows = $("#tb-body-experiencia").find("tr");
         ////console.log(rows.length);
         if (data.length > 0) {
             if (myTable) {
@@ -226,7 +222,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
             } else {
                 // Inicializa DataTable si no ha sido inicializado antes
-                myTable = $("#table-eventos").DataTable({
+                myTable = $("#table-experiencias").DataTable({
                     paging: true,
                     searching: false,
                     lengthMenu: [5, 10, 15, 20],
@@ -294,14 +290,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     /*  async function selectSelectPresentado(e) {
-         idevento = e.target.getAttribute("data-idevento")
+         idexperiencia = e.target.getAttribute("data-idexperiencia")
      } */
 
-    async function registrarEvento(imagen, link, presentado) {
+    async function registrarExperiencia(imagen, presentado) {
         const evento = new FormData();
-        evento.append("operation", "registrarEvento");
-        evento.append("imagenEvento", imagen); // Nota: este debe coincidir con el nombre esperado en PHP
-        evento.append("linkEvento", link);     // Cambiado de "link" a "linkEvento" para coincidir con PHP
+        evento.append("operation", "registrarExperiencia");
+        evento.append("imagenExperiencia", imagen); // Nota: este debe coincidir con el nombre esperado en PHP
         evento.append("presentado", presentado);
 
         const fevento = await fetch(`${host}complemento.controller.php`, {
@@ -312,10 +307,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         return revento;
     }
 
-    async function actualizarPresentadoEvento(idevento, presentado) {
+    async function actualizarPresentadoExperiencia(idexperiencia, presentado) {
         const evento = new FormData();
-        evento.append("operation", "actualizarPresentadoEvento");
-        evento.append("idevento", idevento);
+        evento.append("operation", "actualizarPresentadoExperiencia");
+        evento.append("idexperiencia", idexperiencia);
         evento.append("presentado", presentado);
 
         const fevento = await fetch(`${host}complemento.controller.php`, {
@@ -327,10 +322,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     }
 
-    async function eliminarEvento(idevento, imagenObtenido) {
+    async function eliminarExperiencia(idexperiencia, imagenObtenido) {
         const evento = new FormData();
-        evento.append("operation", "eliminarEvento");
-        evento.append("idevento", idevento);
+        evento.append("operation", "eliminarExperiencia");
+        evento.append("idexperiencia", idexperiencia);
         evento.append("imagenObtenido", imagenObtenido);
 
         const fevento = await fetch(`${host}complemento.controller.php`, {
@@ -341,13 +336,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         return revento;
     }
 
-    async function actualizarEvento(idevento, imagen, imagenObtenido, link, presentado) {
+    async function actualizarExperiencia(idexperiencia, imagen, imagenObtenido, presentado) {
         const evento = new FormData();
-        evento.append("operation", "actualizarEvento");
-        evento.append("idevento", idevento);
+        evento.append("operation", "actualizarExperiencia");
+        evento.append("idexperiencia", idexperiencia);
         evento.append("imagen", imagen);
         evento.append("imagenObtenido", imagenObtenido);
-        evento.append("link", link);
         evento.append("presentado", presentado);
 
         const fevento = await fetch(`${host}complemento.controller.php`, {
@@ -360,12 +354,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
-    $q(".btnGuardarEvento").addEventListener("click", async (e) => {
+    $q(".btnGuardarExperiencia").addEventListener("click", async (e) => {
         e.preventDefault();
-        const btn = $q(".btnGuardarEvento");
+        const btn = $q(".btnGuardarExperiencia");
 
-        const imagenInput = $q("#imagenEvento");
-        const link = $q("#altoketicket").value.trim();
+        const imagenInput = $q("#imagenExperiencia");
         const presentado = $q("#presentado").value;
 
         const file = imagenInput.files[0];
@@ -379,14 +372,14 @@ document.addEventListener("DOMContentLoaded", async () => {
             // Bloquear botón y mostrar mensaje
             btn.disabled = true;
             btn.textContent = "Subiendo...";
-
-            const rpt = await registrarEvento(file, link, presentado);
+            console.log("file >",file);
+            const rpt = await registrarExperiencia(file, presentado);
             console.log("rpt -> ", rpt);
 
             if (rpt.success) {
                 alert(rpt.message);
                 $q("#form-evento").reset();
-                $q("#previewImagenEvento").style.display = "none";
+                $q("#previewImagenExperiencia").style.display = "none";
                 await dataFilters();
             } else {
                 alert("Error: " + rpt.message);
@@ -401,12 +394,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 
-    $q(".btnEditarEvento").addEventListener("click", async (e) => {
+    $q(".btnExperiencia").addEventListener("click", async (e) => {
         e.preventDefault();
-        const btn = $q(".btnEditarEvento");
+        const btn = $q(".btnExperiencia");
 
-        const imagenInput = $q("#imagenEventoEditar");
-        const link = $q("#altoketicketlink").value.trim();
+        const imagenInput = $q("#imagenExperienciaEditar");
         const presentado = $q("#presentadoobt").value;
 
         const file = imagenInput.files[0];
@@ -421,18 +413,17 @@ document.addEventListener("DOMContentLoaded", async () => {
             btn.disabled = true;
             btn.textContent = "Subiendo...";
 
-            console.log("idevento -< ", idevento);
+            console.log("idexperiencia -< ", idexperiencia);
             console.log("file -< ", file);
-            console.log("link -< ", link);
             console.log("presentado -< ", presentado);
             console.log("imgObtenido- > ", imgObtenido);
-            const rpt = await actualizarEvento(idevento, file, imgObtenido, link, presentado);
+            const rpt = await actualizarExperiencia(idexperiencia, file, imgObtenido, presentado);
             console.log("rpt -> ", rpt);
 
             if (rpt.success) {
                 alert(rpt.message);
                 $q("#form-evento").reset();
-                $q("#previewImagenEvento").style.display = "none";
+                $q("#previewImagenExperiencia").style.display = "none";
                 await dataFilters();
             } else {
                 alert("Error: " + rpt.message);
@@ -447,7 +438,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 
-    $q("#imagenEventoEditar").addEventListener("change", function (e) {
+    $q("#imagenExperienciaEditar").addEventListener("change", function (e) {
         console.log("cambinado ...");
         const file = e.target.files[0];
         console.log("file -> ", file);
@@ -466,10 +457,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 
-    $q("#imagenEvento").addEventListener("change", function (e) {
+    $q("#imagenExperiencia").addEventListener("change", function (e) {
         const file = e.target.files[0];
         console.log("file de imagen event -> ", file);
-        const preview = $q("#previewImagenEvento");
+        const preview = $q("#previewImagenExperiencia");
 
         if (file && file.type.startsWith("image/")) {
             const reader = new FileReader();

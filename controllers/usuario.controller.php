@@ -10,11 +10,11 @@ $hostOnly  = "http://localhost/arenalimanorte";
 // cuando se pone en visible true se pone como dropdown
 $accesos = [
 
-  ['modulo' => 'eventos', 'ruta' => '', 'texto' => 'Gestión', 'subruta' => '', 'visible' => true, 'icono' => 'fa-solid fa-chart-simple'],
+  ['modulo' => 'gestion', 'ruta' => '', 'texto' => 'Gestión', 'subruta' => '', 'visible' => true, 'icono' => 'fa-solid fa-chart-simple'],
 
-  ['modulo' => 'eventos', 'ruta' => 'listar-eventos', 'subruta' => '', 'texto' => 'Eventos', 'visible' => false, 'icono' => 'fa-solid fa-list', 'only' => true],
-  ['modulo' => 'eventos', 'ruta' => 'actualizar-evento', 'subruta' => '', 'texto' => '', 'visible' => false, 'icono' => ''],
-  ['modulo' => 'eventos', 'ruta' => 'registrar-evento', 'subruta' => '', 'texto' => '', 'visible' => false, 'icono' => ''],
+  ['modulo' => 'gestion', 'ruta' => 'listar-eventos', 'subruta' => '', 'texto' => 'Eventos', 'visible' => false, 'icono' => 'fa-solid fa-list', 'only' => true],
+
+  ['modulo' => 'gestion', 'ruta' => 'listar-experiencias', 'subruta' => '', 'texto' => 'Experiencias', 'visible' => false, 'icono' => 'fa-solid fa-list', 'only' => true],
 
 ];
 

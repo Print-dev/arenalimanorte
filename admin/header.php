@@ -6,6 +6,12 @@ session_start();
 $usuario = $_SESSION['login']['nom_usuario'];
 $listaAcceso = $_SESSION['login']['accesos'];
 
+ini_set('display_errors', 0); // No mostrar errores en pantalla
+ini_set('log_errors', 1); // Activar log de errores
+ini_set('error_log', '../error.log'); // Establecer ruta del log
+
+error_reporting(E_ALL); // Registrar todos los errores
+
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +33,7 @@ $listaAcceso = $_SESSION['login']['accesos'];
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
 
   <!-- Volt CSS -->
@@ -233,7 +240,7 @@ $listaAcceso = $_SESSION['login']['accesos'];
       <!-- OPCIONES SIDEBAR -->
       <ul class="nav flex-column pt-3 pt-md-0" id="options-sidebar" style="height: auto; max-height: 1500px; overflow-y: auto;">
         <li class="nav-item mb-3">
-          <a class="nav-link bg-white d-flex align-items-center" href="<?= $hostOnlyHeader ?>/views/dashboard">
+          <a class="nav-link bg-white d-flex align-items-center" href="<?= $hostOnlyHeader ?>/admin/gestion/listar-eventos">
             <span class="sidebar-icon me-2">
               <img
                 src="https://res.cloudinary.com/dynpy0r4v/image/upload/v1744859794/arenalimanorte/oincvsofctmbhuoqnhlc.png"
@@ -246,32 +253,32 @@ $listaAcceso = $_SESSION['login']['accesos'];
         </li>
         <?php
         foreach ($listaAcceso as $access) {
-          if ($access['visible'] && $access['modulo'] !== "eventos") {
+          if ($access['visible'] && $access['modulo'] !== "gestion") {
 
             echo "
               <li class='nav-item' >
-                <a href='{$hostOnlyHeader}/views/{$access['modulo']}/{$access['ruta']}' class='nav-link' id='links'>
+                <a href='{$hostOnlyHeader}/admin/{$access['modulo']}/{$access['ruta']}' class='nav-link' id='links'>
                   <i class='{$access['icono']}'></i>
                   <span class='sidebar-text mx-2'>{$access['texto']}</span>
                 </a>
               </li>";
-          } else if ($access['modulo'] === "eventos" && $access['visible']) {
+          } else if ($access['modulo'] === "gestion" && $access['visible']) {
             echo "
               <li class='sidebar-item nav-item'>
-                <a href='#' class='sidebar-link collapsed nav-link sidebar-text d-flex align-items-center' data-bs-toggle='collapse' id='links' data-bs-target='#eventos'
-                  aria-expanded='false' aria-controls='eventos'>
+                <a href='#' class='sidebar-link collapsed nav-link sidebar-text d-flex align-items-center' data-bs-toggle='collapse' id='links' data-bs-target='#gestion'
+                  aria-expanded='false' aria-controls='gestion'>
                   <i class='{$access['icono']}'></i>
                   <span class='sidebar-text mx-2'>{$access['texto']}</span>
                   <i class='fa-solid fa-angle-down ms-auto mt-2 toggle-icon'></i>
                 </a>              
               </li> 
-              <ul id='eventos' class='sidebar-dropdown list-unstyled collapse' data-bs-parent='#eventos'>";
+              <ul id='gestion' class='sidebar-dropdown list-unstyled collapse' data-bs-parent='#gestion'>";
 
             foreach ($listaAcceso as $subAccess) {
-              if (!$subAccess['visible'] && $subAccess['modulo'] === "eventos" && !empty($subAccess['texto']) && !empty($subAccess['icono'])) {
+              if (!$subAccess['visible'] && $subAccess['modulo'] === "gestion" && !empty($subAccess['texto']) && !empty($subAccess['icono'])) {
                 echo "
-                <li class='sidebar-item nav-item list-eventos'>
-                  <a href='{$hostOnlyHeader}/views/{$subAccess['modulo']}/{$subAccess['ruta']}' class='sidebar-link nav-link sidebar-text ms-4' id='links'>
+                <li class='sidebar-item nav-item list-gestion'>
+                  <a href='{$hostOnlyHeader}/admin/{$subAccess['modulo']}/{$subAccess['ruta']}' class='sidebar-link nav-link sidebar-text ms-4' id='links'>
                     <i class='{$subAccess['icono']}'></i>
                     <span class='sidebar-text mx-2'>{$subAccess['texto']}</span>
                   </a>
@@ -306,7 +313,7 @@ $listaAcceso = $_SESSION['login']['accesos'];
             <!-- FIN LOGO NOTIFICACION -->
 
             <!-- USER - LOGOUT -->
-            
+
             <li class="">
               <a class="dropdown-item d-flex align-items-center bg-danger rounded text-white" href="<?= $hostOnlyHeader ?>/controllers/usuario.controller.php?operation=destroy">
                 <svg
@@ -372,7 +379,7 @@ $listaAcceso = $_SESSION['login']['accesos'];
       /* document.querySelector("#configurar-perfil").addEventListener("click", () => {
         window.localStorage.clear()
         window.localStorage.setItem("idusuario", idusuarioLogeado)
-        window.location.href = `${hostOnly}/views/utilitario/usuarios/actualizar-usuario`
+        window.location.href = `${hostOnly}/admin/utilitario/usuarios/actualizar-usuario`
         return
       })
 
