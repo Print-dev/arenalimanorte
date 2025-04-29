@@ -310,12 +310,22 @@ li {
 
 }
 
+.navbar-brand img{
+    margin-left: 25px;
+}
+
 @media (max-width: 768px) {
     .swiper-slide-coverflow {
         max-width: 100%;
         height: 580px;
 
         /* Que ocupe más espacio en pantallas pequeñas */
+    }
+
+    .navbar-brand img{
+        width: 60px;
+        margin-left: 1px;
+
     }
 }
 
