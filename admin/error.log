@@ -502,3 +502,15 @@
 [25-Apr-2025 23:41:22 Europe/Berlin] PHP Warning:  Undefined array key "ruc" in C:\xampp\htdocs\arenalimanorte\admin\header.php on line 362
 [25-Apr-2025 23:41:22 Europe/Berlin] PHP Warning:  Undefined array key "razonsocial" in C:\xampp\htdocs\arenalimanorte\admin\header.php on line 363
 [25-Apr-2025 23:41:22 Europe/Berlin] PHP Warning:  Undefined array key "nivelacceso" in C:\xampp\htdocs\arenalimanorte\admin\footer.php on line 54
+[28-Apr-2025 17:28:44 Europe/Berlin] PHP Warning:  Undefined array key "nivelacceso" in C:\xampp\htdocs\arenalimanorte\admin\header.php on line 361
+[28-Apr-2025 17:28:44 Europe/Berlin] PHP Warning:  Undefined array key "ruc" in C:\xampp\htdocs\arenalimanorte\admin\header.php on line 362
+[28-Apr-2025 17:28:44 Europe/Berlin] PHP Warning:  Undefined array key "razonsocial" in C:\xampp\htdocs\arenalimanorte\admin\header.php on line 363
+[28-Apr-2025 17:28:45 Europe/Berlin] PHP Warning:  Undefined array key "nivelacceso" in C:\xampp\htdocs\arenalimanorte\admin\footer.php on line 54
+[28-Apr-2025 17:28:47 Europe/Berlin] PHP Warning:  Undefined array key "nivelacceso" in C:\xampp\htdocs\arenalimanorte\admin\header.php on line 361
+[28-Apr-2025 17:28:47 Europe/Berlin] PHP Warning:  Undefined array key "ruc" in C:\xampp\htdocs\arenalimanorte\admin\header.php on line 362
+[28-Apr-2025 17:28:47 Europe/Berlin] PHP Warning:  Undefined array key "razonsocial" in C:\xampp\htdocs\arenalimanorte\admin\header.php on line 363
+[28-Apr-2025 17:28:47 Europe/Berlin] PHP Warning:  Undefined array key "nivelacceso" in C:\xampp\htdocs\arenalimanorte\admin\footer.php on line 54
+[28-Apr-2025 17:28:56 Europe/Berlin] PHP Warning:  Undefined array key "nivelacceso" in C:\xampp\htdocs\arenalimanorte\admin\header.php on line 361
+[28-Apr-2025 17:28:56 Europe/Berlin] PHP Warning:  Undefined array key "ruc" in C:\xampp\htdocs\arenalimanorte\admin\header.php on line 362
+[28-Apr-2025 17:28:56 Europe/Berlin] PHP Warning:  Undefined array key "razonsocial" in C:\xampp\htdocs\arenalimanorte\admin\header.php on line 363
+[28-Apr-2025 17:28:56 Europe/Berlin] PHP Warning:  Undefined array key "nivelacceso" in C:\xampp\htdocs\arenalimanorte\admin\footer.php on line 54
