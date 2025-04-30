@@ -13,7 +13,7 @@ CREATE TABLE usuarios
 
 )ENGINE=INNODB;
 
-insert into usuarios (email, nom_usuario, claveacceso, estado) values ('royer.190818@gmail.com', 'royer', '$2y$10$M7iFTSZbB5B/jUcwLz06VuH6u9cnsoZEr7p34mxfsWdxQ6dojcuUO', 1);
+insert into usuarios (email, nom_usuario, claveacceso, estado) values ('royer.190818@gmail.com', 'admin', '$2y$10$M7iFTSZbB5B/jUcwLz06VuH6u9cnsoZEr7p34mxfsWdxQ6dojcuUO', 1);
 
 CREATE TABLE eventos
 (

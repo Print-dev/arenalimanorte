@@ -55,12 +55,12 @@
                 <div class="modal-body">
                     <form id="form-evento">
                         <div class="mb-3">
-                            <label for="imagenExperiencia" class="form-label">Imagen del evento</label>
+                            <label for="imagenExperiencia" class="form-label">Imagen del evento (800x800)</label>
                             <input class="form-control" type="file" id="imagenExperiencia" name="imagenExperiencia" accept="image/*">
                         </div>
 
                         <div class="mb-3 text-center">
-                            <img id="previewImagenExperiencia" src="" alt="Previsualización" style="max-width: 100%; height: auto; display: none; border: 1px solid #ccc; padding: 5px; border-radius: 8px;">
+                            <img id="previewImagenExperiencia" src="https://blog.pdainternational.net/wp-content/uploads/2017/08/800x800-ph.jpg" alt="Previsualización" style="max-width: 100%; height: auto; border: 1px solid #ccc; padding: 5px; border-radius: 8px;">
                         </div>
                         <div class="mb-3">
                             <label for="presentado" class="form-label">¿Presentado?</label>
@@ -91,7 +91,7 @@
                 <div class="modal-body">
                     <form id="form-evento">
                         <div class="mb-3">
-                            <label for="imagenExperienciaEditar" class="form-label">Imagen del evento</label>
+                            <label for="imagenExperienciaEditar" class="form-label">Imagen del evento (800x800)</label>
                             <input class="form-control" type="file" id="imagenExperienciaEditar" name="imagenExperienciaEditar" accept="image/*">
                         </div>
 

@@ -215,36 +215,38 @@
             <div class="text-start ">
                 <h2>Próximos eventos.</h2>
             </div>
-            <swiper-container class="mySwiper swiper-coverflow" id="swiper-eventos" slides-per-view="1" breakpoints='{
-                "0": { "slidesPerView": 1 },
-                "768": { "slidesPerView": 2 },
-                "1024": { "slidesPerView": 3 }
-              }' centered-slides="true" initial-slide="1" space-between="0" navigation="true" navigation="true"
-                centered-slides="true" pagination="false">
+            <div class="col-md-6">
+                <div class="carousel-container position-relative">
+                    <!-- El carousel -->
+                    <div id="carouselquienes" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner" data-bs-interval="1000">
+                            <div class="carousel-item active">
+                                <img src="./images/DSC06272.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/DSC06183.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/DSC06253-Enhanced-NR.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/DSC06189-Enhanced-NR.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
 
-                <swiper-slide class="swiper-slide-coverflow">
-                    <div class="card swiper-img-coverflow ">
-                        <a href="https://altoketicket.com.pe/event/lanzamiento-oficial-%22stefany-lozano-y-su-pasi%C3%B3n-morena%22/162" target="_blank">
-                            <img class="card-img-top" src="./images/estefany.png" />
-                        </a>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselquienes"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselquienes"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
-                </swiper-slide>
-                <swiper-slide class="swiper-slide-coverflow">
-                    <div class="card swiper-img-coverflow ">
-                        <a href="https://altoketicket.com.pe/event/lanzamiento-oficial-%22stefany-lozano-y-su-pasi%C3%B3n-morena%22/162" target="_blank">
-                            <img class="card-img-top" src="./images/estefany.png" />
-                        </a>
-                    </div>
-                </swiper-slide>
-                <swiper-slide class="swiper-slide-coverflow">
-                    <div class="card swiper-img-coverflow ">
-                        <a href="https://altoketicket.com.pe/event/lanzamiento-oficial-%22stefany-lozano-y-su-pasi%C3%B3n-morena%22/162" target="_blank">
-                            <img class="card-img-top" src="./images/estefany.png" />
-                        </a>
-                    </div>
-                </swiper-slide>
-
-            </swiper-container>
+                </div>
+            </div>
         </div>
         <div class="d-flex justify-content-center">
             <a href="https://altoketicket.com.pe/" target="_blank" class="btn-card mb-5">Comprar Entradas</a>
@@ -335,7 +337,7 @@
                       }' centered-slides="true" initial-slide="2" space-between="0" navigation="true" navigation="true"
                         centered-slides="true" pagination="false">
 
-                         <swiper-slide class="swiper-slide-coverflow">
+                        <swiper-slide class="swiper-slide-coverflow">
                             <div class="card swiper-img-coverflow ">
                                 <img class="card-img-top" src="./images/estefany.png" />
 
