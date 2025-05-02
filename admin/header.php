@@ -314,23 +314,23 @@ error_reporting(E_ALL); // Registrar todos los errores
 
             <!-- USER - LOGOUT -->
 
-            <li class="">
-              <a class="dropdown-item d-flex align-items-center bg-danger rounded text-white" href="<?= $hostOnlyHeader ?>/controllers/usuario.controller.php?operation=destroy">
-                <svg
-                  class="dropdown-icon text-danger me-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
-                </svg>
-                Cerrar Sesión
-              </a>
+            <li class="dropdown-item">
+              <div class="d-flex justify-content-end gap-2">
+                <a class="d-flex align-items-center bg-info rounded text-white px-3 py-2 text-decoration-none" href="<?= $hostOnlyHeader ?>/" target="_blank">
+                  <svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                  </svg>
+                  Visitar Inicio
+                </a>
+                <a class="d-flex align-items-center bg-danger rounded text-white px-3 py-2 text-decoration-none" href="<?= $hostOnlyHeader ?>/controllers/usuario.controller.php?operation=destroy">
+                  <svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                  </svg>
+                  Cerrar Sesión
+                </a>
+              </div>
             </li>
+
             <!-- FIN USER - LOGOUT -->
           </ul>
 

@@ -379,7 +379,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (rpt.success) {
                 showToast(rpt.message, "SUCCESS");
                 $q("#form-evento").reset();
-                $q("#previewImagenExperiencia").style.display = "none";
+                $q("#previewImagenExperiencia").src = `https://www.tomizone.com/wp-content/uploads/2017/10/1080x720.png`;
+                
                 await dataFilters();
             } else {
                 showToast(rpt.message, "ERROR");

@@ -643,17 +643,17 @@ li {
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0, 0, 0, 0.95);
-        /* Fondo oscuro semi-transparente */
-        z-index: 999;
-        /* Z-index menor que el del logo */
+        background-color: rgba(0, 0, 0, 0.500); /* Fondo oscuro semi-transparente */
+        backdrop-filter: blur(8px); /* Efecto blur */
+        -webkit-backdrop-filter: blur(8px); /* Compatibilidad con Safari */
+        z-index: 999; /* Z-index menor que el del logo */
         height: 100vh !important;
-        padding-top: 80px;
-        /* Espacio para el logo */
+        padding-top: 80px; /* Espacio para el logo */
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
+    
 
     /* Aseguramos que el logo permanezca visible */
     .navbar-brand {
@@ -680,6 +680,8 @@ li {
         font-size: 1.5rem;
         padding: 10px 0;
     }
+
+    
 
     /* Posición del botón cerrar */
     .navbar-toggler.collapsed {
