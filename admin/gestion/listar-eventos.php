@@ -17,7 +17,6 @@
                 <div class="card border-0">
                     <div class="card-body">
                         <div class="row g-0 mb-3">
-
                             <div class="row g-1">
                                 <div class="table-responsive">
                                     <table class="table" id="table-eventos">

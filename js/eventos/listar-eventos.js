@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     async function dataFilters() {
         const params = new URLSearchParams();
         params.append("operation", "obtenerEventos");
-        //alert("asdasdd")
+        //showToast("asdasdd")
         const data = await getDatos(`${host}complemento.controller.php`, params);
         //console.log(data);
         console.log("data -> ", data)
@@ -371,7 +371,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const file = imagenInput.files[0];
 
         if (!file) {
-            alert("Por favor selecciona una imagen.");
+            showToast("Por favor selecciona una imagen.", "INFO");
             return;
         }
 
@@ -384,16 +384,16 @@ document.addEventListener("DOMContentLoaded", async () => {
             console.log("rpt -> ", rpt);
 
             if (rpt.success) {
-                alert(rpt.message);
+                showToast(rpt.message, "SUCCESS");
                 $q("#form-evento").reset();
                 $q("#previewImagenEvento").style.display = "none";
                 await dataFilters();
             } else {
-                alert("Error: " + rpt.message);
+                showToast(rpt.message, "ERROR");
             }
         } catch (error) {
             console.error("Error en la petición:", error);
-            alert("Ocurrió un error al procesar la solicitud");
+            showToast("Ocurrió un error al procesar la solicitud", "ERROR");
         } finally {
             // Restaurar botón
             btn.disabled = false;
@@ -412,7 +412,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const file = imagenInput.files[0];
         console.log("file escogido -> ", file);
         if (!file) {
-            alert("Por favor selecciona una imagen.");
+            showToast("Por favor selecciona una imagen.", "INFO");
             return;
         }
 
@@ -430,16 +430,16 @@ document.addEventListener("DOMContentLoaded", async () => {
             console.log("rpt -> ", rpt);
 
             if (rpt.success) {
-                alert(rpt.message);
+                showToast(rpt.message, "SUCCESS");
                 $q("#form-evento").reset();
                 $q("#previewImagenEvento").style.display = "none";
                 await dataFilters();
             } else {
-                alert("Error: " + rpt.message);
+                showToast(rpt.message, "ERROR");
             }
         } catch (error) {
             console.error("Error en la petición:", error);
-            alert("Ocurrió un error al procesar la solicitud");
+            showToast("Ocurrió un error al procesar la solicitud", "ERROR");
         } finally {
             // Restaurar botón
             btn.disabled = false;
@@ -529,12 +529,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     } */
 
-    async function buttonPDFComprobante(e) {
-        idcomprobante = e.target.getAttribute("data-idcomprobante");
-        window.open(
-            `${hostOnly}/generators/generadores_pdf/nota_de_venta/notadeventa.php?idcomprobante=${idcomprobante}&idtipodoc=02`
-        );
-    }
+
 
     /* async function buttonXMLComprobante(e) {
         idcomprobante = e.target.getAttribute("data-idcomprobante");

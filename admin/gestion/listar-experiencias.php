@@ -14,11 +14,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="card border-0">
                     <div class="card-body">
                         <div class="row g-0 mb-3">
 
-                            <div class="row g-1">
                                 <div class="table-responsive">
                                     <table class="table" id="table-experiencias">
                                         <thead class="text-center">
@@ -35,11 +33,9 @@
                                     </table>
 
                                 </div>
-                            </div>
 
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>
@@ -49,18 +45,18 @@
         <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="modalexperiencias">Añadir evento</h1>
+                    <h1 class="modal-title fs-5" id="modalexperiencias">Añadir experiencia</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="form-evento">
                         <div class="mb-3">
-                            <label for="imagenExperiencia" class="form-label">Imagen del evento (800x800)</label>
+                            <label for="imagenExperiencia" class="form-label">Imagen del evento (1080x720)</label>
                             <input class="form-control" type="file" id="imagenExperiencia" name="imagenExperiencia" accept="image/*">
                         </div>
 
                         <div class="mb-3 text-center">
-                            <img id="previewImagenExperiencia" src="https://blog.pdainternational.net/wp-content/uploads/2017/08/800x800-ph.jpg" alt="Previsualización" style="max-width: 100%; height: auto; border: 1px solid #ccc; padding: 5px; border-radius: 8px;">
+                            <img id="previewImagenExperiencia" src="https://www.tomizone.com/wp-content/uploads/2017/10/1080x720.png" alt="Previsualización" style="max-width: 100%; height: auto; border: 1px solid #ccc; padding: 5px; border-radius: 8px;">
                         </div>
                         <div class="mb-3">
                             <label for="presentado" class="form-label">¿Presentado?</label>
@@ -85,13 +81,13 @@
         <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="modaleditarexperiencia">Editar evento</h1>
+                    <h1 class="modal-title fs-5" id="modaleditarexperiencia">Editar experiencia</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="form-evento">
                         <div class="mb-3">
-                            <label for="imagenExperienciaEditar" class="form-label">Imagen del evento (800x800)</label>
+                            <label for="imagenExperienciaEditar" class="form-label">Imagen (1080x720)</label>
                             <input class="form-control" type="file" id="imagenExperienciaEditar" name="imagenExperienciaEditar" accept="image/*">
                         </div>
 

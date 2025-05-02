@@ -4,7 +4,7 @@ session_start();
 $hostOnly = "http://localhost/arenalimanorte";
 
 if (isset($_SESSION['login']) && $_SESSION['login']['estado']) {
-  header('Location:' . $hostOnly . '/views/dashboard');
+  header('Location:' . $hostOnly . '/admin/gestion/listar-eventos');
 }
 ?>
 <!DOCTYPE html>

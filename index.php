@@ -47,17 +47,16 @@
     </div>
 
     <!-- NAVBAR -->
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark nav w-100 z-3 fixed-top" id="mainNavbar">
         <div class="container-fluid px-4">
             <!-- Izquierda: Logo -->
             <a class="navbar-brand" href="#">
-                <img src="./images/logo-navbar-recortado.png"
-                    width="70" alt="Logo">
+                <img src="./images/logo-navbar-recortado.png" width="70" alt="Logo">
             </a>
 
             <!-- Botón hamburguesa -->
-            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
+            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon" style="font-size: 10px;"></span>
             </button>
 
@@ -66,20 +65,27 @@
                 <ul class="navbar-nav text-center">
                     <li class="nav-item"><a class="nav-link text-white" href="#quienes">Quienes somos</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="#eventos">Eventos próximos</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#experiencias">Experiencias</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#experiencias">Experiencias</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="#contactos">Contáctanos</a></li>
                 </ul>
+
+                <!-- Botón Ticketera (visible en móviles, debajo del menú) -->
+                <div class="d-lg-none text-center mt-3 w-100">
+                    <a href="https://altoketicket.com.pe" target="_blank" class="btn-card p-3 rounded-5">
+                        <i class="bi bi-ticket"></i> Ticketera
+                    </a>
+                </div>
             </div>
 
-            <!-- Derecha: Botón -->
+            <!-- Botón Ticketera (visible en pantallas grandes, a la derecha) -->
             <div class="d-none d-lg-flex ms-auto">
-                <a href="https://altoketicket.com.pe" target="_blank" class="btn-card p-3 rounded-5"><i
-                        class="bi bi-ticket"></i>
-                    Ticketera</a>
+                <a href="https://altoketicket.com.pe" target="_blank" class="btn-card p-3 rounded-5">
+                    <i class="bi bi-ticket"></i> Ticketera
+                </a>
             </div>
         </div>
     </nav>
+
 
     <!-- CAROUSEL -->
     <div class="carousel-container position-relative">
@@ -209,47 +215,23 @@
             </div>
         </div>
     </section>
-    <section class="mt-5 position-relative overflow-hidden swiper-wrapper-coverflow" id="eventos">
+    <section class="mt-5 position-relative overflow-hidden swiper-wrapper-coverflow py-5" style="background-color: #1D1D1F;" id="eventos">
         <div class="container ">
 
-            <div class="text-start ">
+            <div class="conteiner-quienes">
                 <h2>Próximos eventos.</h2>
             </div>
-            <div class="col-md-6">
-                <div class="carousel-container position-relative">
-                    <!-- El carousel -->
-                    <div id="carouselquienes" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                        <div class="carousel-inner" data-bs-interval="1000">
-                            <div class="carousel-item active">
-                                <img src="./images/DSC06272.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="./images/DSC06183.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="./images/DSC06253-Enhanced-NR.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="./images/DSC06189-Enhanced-NR.jpg" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
+            <swiper-container class="mySwiper swiper-coverflow" id="swiper-eventos" slides-per-view="1" breakpoints='{
+                "0": { "slidesPerView": 1 },
+                "768": { "slidesPerView": 2 },
+                "1024": { "slidesPerView": 3 }
+              }' centered-slides="true" initial-slide="1" space-between="0" navigation="true" navigation="true"
+                centered-slides="true" pagination="false">
 
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselquienes"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselquienes"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+            </swiper-container>
         </div>
         <div class="d-flex justify-content-center">
-            <a href="https://altoketicket.com.pe/" target="_blank" class="btn-card mb-5">Comprar Entradas</a>
+            <a href="https://altoketicket.com.pe/" target="_blank" class="btn-card">Comprar Entradas</a>
         </div>
     </section>
 
@@ -314,26 +296,51 @@
  -->
 
 
-    <section class="experiencias-section py-5" id="experiencias">
-        <div class="container-fluid">
+    <section class="experiencias-section py-5" style="background-color: #1D1D1F;" id="experiencias">
+        <div class="container">
 
 
-            <div class="row align-items-center">
-                <div class="col-md-3 col-12 py-2">
-                    <div class="experiencias-content">
-                        <h1
-                            class="col-12 col-md-4 p-5 d-flex flex-column justify-content-center align-items-center text-start">
-                            <span class="experiencias-main-title">Experiencias</span>
-                            <span class="experiencias-subtitle">Únicas</span><br>
-                        </h1>
+            <div class="row d-flex flex-column justify-content-center align-items-center text-start">
+                <div class="experiencias-content">
+                    <h1 class="">
+                        <span class="experiencias-main-title">Experiencias</span>
+                        <span class="experiencias-subtitle">Únicas</span><br>
+                    </h1>
+                </div>
+
+                <div class="carousel-container position-relative">
+                    <!-- El carousel -->
+                    <div id="carouselprincipal3" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner carousel-experiencias" data-bs-interval="1000">
+                            <!-- <div class="carousel-item">
+                                <img src="./images/ARENA LIMA NORTE-3_.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/ARENA LIMA NORTE-12_.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/ARENA LIMA NORTE-6_.png" class="d-block w-100" alt="...">
+                            </div> -->
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselprincipal3"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselprincipal3"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
                 <!-- Columna de texto -->
-                <div class="col-md-9">
+                <!-- <div class="">
                     <swiper-container class="mySwiper swiper-coverflow" id="swiper-experiencias" slides-per-view="1" breakpoints='{
                         "0": { "slidesPerView": 1 },
-                        "768": { "slidesPerView": 2 },
-                        "1024": { "slidesPerView": 3 }
+                        "768": { "slidesPerView": 1 },
+                        "1024": { "slidesPerView": 1 }
                       }' centered-slides="true" initial-slide="2" space-between="0" navigation="true" navigation="true"
                         centered-slides="true" pagination="false">
 
@@ -392,7 +399,7 @@
                             </div>
                         </swiper-slide>
                     </swiper-container>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -428,10 +435,12 @@
                 </div>
                 <div class="col-6 col-md-3 mb-3">
                     <strong>Correos</strong><br>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=asesorcomercial@gmail.com" target="_blank" class="text-white-50 text-decoration-none d-block mt-2">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=asesorcomercial@gmail.com" target="_blank"
+                        class="text-white-50 text-decoration-none d-block mt-2">
                         asesorcomercial
                     </a>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vegaproducciones@gmail.com" target="_blank" class="text-white-50 text-decoration-none d-block">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vegaproducciones@gmail.com" target="_blank"
+                        class="text-white-50 text-decoration-none d-block">
                         vegaproducciones
                     </a>
 

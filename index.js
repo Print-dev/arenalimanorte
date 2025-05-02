@@ -14,25 +14,34 @@ window.addEventListener("DOMContentLoaded", async () => {
     }
 
     let containerSwiperEventos = $q("#swiper-eventos")
-    let containerSwiperExperiencias = $q("#swiper-experiencias")
+    let containerCarouselExperiencias = $q(".carousel-experiencias")
     console.log("hoa");
     async function obtenerEventosPresentados() {
         const params = new URLSearchParams();
         params.append("operation", "obtenerEventosPresentados");
         const data = await getDatos(`http://localhost/arenalimanorte/controllers/complemento.controller.php`, params);
         console.log("data _>>><", data);
-        data.forEach(evento => {
-            containerSwiperEventos.innerHTML += `
-        <swiper-slide class="swiper-slide-coverflow">
-                    <div class="card swiper-img-coverflow ">
-                        <a href="${evento.link}" target="_blank">
-                            <img class="card-img-top" src="https://res.cloudinary.com/dynpy0r4v/image/upload/v1745593192/${evento.imagen}" />
-                        </a>
-                    </div>
-                </swiper-slide>
-        `
-        });
-        //return data;
+        if (data.length == 0) {
+            containerSwiperEventos.innerHTML = `
+            <div class="container text-center ">
+                <p class="">Aun no hay nada.</p>
+            </div>
+                
+            `
+        } else {
+            data.forEach(evento => {
+                containerSwiperEventos.innerHTML += `
+            <swiper-slide class="swiper-slide-coverflow">
+                        <div class="card swiper-img-coverflow ">
+                            <a href="${evento.link}" target="_blank">
+                                <img class="card-img-top" src="https://res.cloudinary.com/dynpy0r4v/image/upload/v1745593192/${evento.imagen}" />
+                            </a>
+                        </div>
+                    </swiper-slide>
+            `
+            });
+        }
+
     }
 
     async function obtenerExperienciasPresentados() {
@@ -40,22 +49,32 @@ window.addEventListener("DOMContentLoaded", async () => {
         params.append("operation", "obtenerExperienciasPresentados");
         const data = await getDatos(`http://localhost/arenalimanorte/controllers/complemento.controller.php`, params);
         console.log("data _>>><", data);
-        data.forEach(evento => {
-            containerSwiperExperiencias.innerHTML += `
-            <swiper-slide class="swiper-slide-coverflow">
-                <div class="card swiper-img-coverflow ">
-                            <img class="card-img-top" src="https://res.cloudinary.com/dynpy0r4v/image/upload/v1745593192/${evento.imagen}" />
 
+        // Verifica si hay al menos un evento
+        if (data.length > 0) {
+            // Primer item del carousel con clase "active"
+            containerCarouselExperiencias.innerHTML = `
+                <div class="carousel-item active">
+                    <img src="https://res.cloudinary.com/dynpy0r4v/image/upload/v1745593192/${data[0].imagen}" class="d-block w-100" alt="...">
                 </div>
-            </swiper-slide>
-        
-        `
-        });
-        //return data;
+            `;
+
+            // Agregar los demás items sin la clase "active"
+            data.slice(1).forEach(evento => {
+                containerCarouselExperiencias.innerHTML += `
+                <div class="carousel-item">
+                    <img src="https://res.cloudinary.com/dynpy0r4v/image/upload/v1745593192/${evento.imagen}" class="d-block w-100" alt="...">
+                </div>
+                `;
+            });
+        }
     }
+
 
     await obtenerEventosPresentados()
     await obtenerExperienciasPresentados()
+
+    
 })
 
 window.addEventListener('scroll', async () => {
